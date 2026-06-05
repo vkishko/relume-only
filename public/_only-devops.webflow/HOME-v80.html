@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME v80 — HERO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background: #ffffff;
+      min-height: 100%;
+    }
+
+    /* ─── HERO ─── */
+    .hero-bg {
+      width: 100%;
+      background-color: #051133;
+    }
+
+    .hero {
+      position: relative;
+      width: 1425px;
+      height: 720px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px;
+      padding-left: 105px;
+      padding-right: 105px;
+      isolation: isolate;
+      margin: 0 auto;
+    }
+
+    /* ─── HEAD BLOCK ─── */
+    .hero__head-block {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+      padding-left: 105px;
+      padding-right: 105px;
+      width: 1215px;
+      flex-shrink: 0;
+    }
+
+    .hero__head-lead {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: flex-start;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .hero__heading-frame {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .hero__heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 89px;
+      line-height: 1.1;
+      text-align: center;
+      color: #ffffff;
+      width: 100%;
+      word-break: break-word;
+      flex-shrink: 0;
+    }
+
+    .hero__lead-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 60px;
+      padding-right: 60px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .hero__lead {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 28px;
+      line-height: 1.2;
+      text-align: center;
+      color: #ffffff;
+      width: 100%;
+      word-break: break-word;
+      flex-shrink: 0;
+    }
+
+    /* ─── BUTTONS ─── */
+    .hero__buttons {
+      display: flex;
+      gap: 31px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .hero__btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      border-radius: 7px;
+      cursor: pointer;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .hero__btn--primary {
+      background-color: #ffffff;
+      border: none;
+    }
+
+    .hero__btn--secondary {
+      background-color: transparent;
+      border: 2px solid #ffffff;
+    }
+
+    .hero__btn-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .hero__btn-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: -0.42px;
+      white-space: nowrap;
+      word-break: break-word;
+    }
+
+    .hero__btn--primary .hero__btn-text {
+      color: #051133;
+    }
+
+    .hero__btn--secondary .hero__btn-text {
+      color: #ffffff;
+    }
+
+    /* ─── FIGURE (3D isometric boxes) ─── */
+    .hero__figure {
+      position: absolute;
+      height: 578.571px;
+      width: 1215px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 375.43px;
+      z-index: 1;
+    }
+
+    .hero__box {
+      position: absolute;
+    }
+
+    /* Box positions (relative to .hero__figure 1215 × 578.571px) */
+    .hero__box--1 { top: 0;   bottom: 20%;     left: 16.67%;  right: 50%;    } /* orange, tall-left  */
+    .hero__box--2 { top: 20%; bottom: 0;        left: 0;       right: 66.67%; } /* blue,   small-left */
+    .hero__box--3 { top: 0;   bottom: 20%;     left: 50%;     right: 16.67%; } /* blue,   tall-right */
+    .hero__box--4 { top: 20%; bottom: 0;        left: 33.33%;  right: 33.33%; } /* gray,   center     */
+    .hero__box--5 { top: 20%; bottom: 0;        left: 66.67%;  right: 0;      } /* orange, small-right*/
+
+    /* SVG face containers */
+    .hero__face {
+      position: absolute;
+    }
+
+    .hero__face--top   { inset: 0 0 0.01% 0; }
+    .hero__face--right { top: 24.99%; bottom: 0; left: 50%; right: 0; }
+    .hero__face--left  { top: 24.99%; bottom: 0; left: 0;   right: 50%; }
+
+    .hero__face svg {
+      position: absolute;
+      display: block;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ─── SECTION: Закрываем задачи разными подходами ─── */
+    .sbi-bg {
+      width: 100%;
+      background-color: #051133;
+      overflow: hidden;
+    }
+
+    .sbi-section {
+      position: relative;
+      width: 1425px;
+      margin: 0 auto 0;
+      overflow: visible;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 80px 33px;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 280px 105px 120px;
+    }
+
+    .sbi-figure {
+      position: absolute;
+      top: -346px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1215px;
+      height: 578.571px;
+    }
+
+    .sbi-box {
+      position: absolute;
+      overflow: visible;
+    }
+
+    .sbi-box__top {
+      position: absolute;
+      inset: 0 0 0.01% 0;
+    }
+
+    .sbi-box__right {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      right: 0;
+      top: 24.99%;
+    }
+
+    .sbi-box__left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 50%;
+      top: 24.99%;
+    }
+
+    .sbi-box__top svg,
+    .sbi-box__right svg,
+    .sbi-box__left svg {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .sbi-content {
+      width: 1215px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+      padding: 0 105px;
+      flex-shrink: 0;
+    }
+
+    .sbi-heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 89px;
+      line-height: 1.1;
+      color: #ffffff;
+      text-align: center;
+      width: 100%;
+      word-break: break-word;
+    }
+
+    .sbi-heading__word-wrap {
+      position: relative;
+      display: inline;
+    }
+
+    .sbi-heading__gradient {
+      background: linear-gradient(90deg, #0040BF 5.3%, #FF840B 48.6%, #FF840B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: #FF840B;
+    }
+
+    .sbi-heading__underline {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #0040BF 5%, #FF840B 50%);
+      margin-left: 20px;
+    }
+
+    /* ─── SERVICES ─── */
+    .services {
+      background-color: #ffffff;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 80px 33px;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 80px 105px 120px;
+    }
+
+    .services__head {
+      width: 1215px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+      padding: 0 105px;
+      flex-shrink: 0;
+    }
+
+    .services__head-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .services__title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      color: #051133;
+      text-align: center;
+      word-break: break-word;
+    }
+
+    .services__section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.2;
+      color: #051133;
+      width: 100%;
+    }
+
+    .services__heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 89px;
+      line-height: 1.1;
+      color: #051133;
+      width: 100%;
+    }
+
+    .services__lead-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 120px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .services__lead {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 1.2;
+      text-align: center;
+      color: #051133;
+      width: 100%;
+      word-break: break-word;
+    }
+
+    /* ─── CARDS GRID ─── */
+    .services__grid {
+      width: 1215px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card {
+      position: relative;
+      background-color: #f2f2f2;
+      width: 600px;
+      height: 560px;
+      padding: 45px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .card__top {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: flex-start;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .card__title {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 46px;
+      line-height: 1.2;
+      color: #051133;
+      word-break: break-word;
+      width: 100%;
+    }
+
+    .card__desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.3;
+      color: #051133;
+      word-break: break-word;
+      width: 100%;
+    }
+
+    .card__more {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      color: #FF840B;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      white-space: nowrap;
+      text-decoration-color: #FF840B;
+    }
+
+    .card__list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .card__list-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px 0;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.6px;
+      color: #051133;
+      word-break: break-word;
+    }
+
+    /* ─── FIGURES BLOCK ─── */
+    .card__figures-block {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 292px;
+      height: 280px;
+    }
+
+    .iso-figure {
+      position: absolute;
+    }
+
+    /* ─── ISO BOX ─── */
+    .iso-box {
+      position: absolute;
+      width: 84px;
+      height: 96px;
+    }
+
+    .iso-box__top {
+      position: absolute;
+      inset: 0;
+    }
+
+    .iso-box__right {
+      position: absolute;
+      top: 24px;
+      left: 42px;
+      right: 0;
+      bottom: 0;
+    }
+
+    .iso-box__left {
+      position: absolute;
+      top: 24px;
+      left: 0;
+      right: 42px;
+      bottom: 0;
+    }
+
+    .iso-box__top svg,
+    .iso-box__right svg,
+    .iso-box__left svg {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ─── CASES SECTION ─── */
+    .cases-bg {
+      width: 100%;
+      background-color: #f2f2f2;
+    }
+
+    .cases-section {
+      width: 1425px;
+      margin: 0 auto;
+      padding: 80px 105px 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .cases-head {
+      width: 1194px;
+      padding: 0 105px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .cases-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.2;
+      color: #051133;
+      text-align: center;
+    }
+
+    .cases-heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500;
+      font-size: 89px;
+      line-height: 1.1;
+      color: #051133;
+      text-align: center;
+    }
+
+    .cases-tabs {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    .cases-tab {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 1.2;
+      color: #051133;
+      padding: 10px 20px;
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .cases-tab--active {
+      border-color: #051133;
+    }
+
+    .cases-slider {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      width: 1365px;
+    }
+
+    .cases-arrow {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .cases-arrow--disabled {
+      background: #D9D9D9;
+      color: #999;
+      cursor: default;
+    }
+
+    .cases-arrow--next {
+      background: #051133;
+      color: white;
+    }
+
+    .cases-card {
+      width: 1215px;
+      background: white;
+      padding: 45px;
+      border-radius: 10px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      overflow: hidden;
+      display: none;
+    }
+
+    .cases-card--active {
+      display: flex;
+    }
+
+    .cases-card__left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+
+    .cases-card__top {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .cases-card__title {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 1.2;
+      color: #051133;
+    }
+
+    .cases-card__desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.3;
+      color: #051133;
+    }
+
+    .cases-card__tags {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .cases-card__tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      color: #0040BF;
+      letter-spacing: -0.6px;
+    }
+
+    .cases-card__link {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      color: #FF840B;
+      text-decoration: underline;
+      margin-top: 40px;
+      display: inline-block;
+    }
+
+    .cases-card__scheme {
+      width: 800px;
+      height: 560px;
+      flex-shrink: 0;
+      background: #f8f8f8;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .cases-card__scheme img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ─── ABOUT: О компании / Команда экспертов ─── */
+    .about-bg {
+      width: 100%;
+      background-color: #0040bf;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-section {
+      position: relative;
+      width: 1425px;
+      margin: 0 auto;
+      padding: 80px 105px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-figure-wrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 840px;
+      height: 1200px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .about-figure {
+      width: 840px;
+      height: 1200px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+      padding: 0 105px;
+      width: 1215px;
+      flex-shrink: 0;
+    }
+
+    .about-head-lead {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: flex-start;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .about-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      flex-shrink: 0;
+      text-align: center;
+      color: #ffffff;
+      word-break: break-word;
+    }
+
+    .about-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.2;
+      width: 100%;
+    }
+
+    .about-heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 89px;
+      line-height: 1.1;
+      width: 100%;
+    }
+
+    .about-lead-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 60px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .about-lead {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 28px;
+      line-height: 1.2;
+      text-align: center;
+      color: #ffffff;
+      width: 100%;
+      word-break: break-word;
+    }
+
+    .about-buttons {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .about-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      border-radius: 7px;
+      cursor: pointer;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .about-btn--primary {
+      background-color: #ff840b;
+    }
+
+    .about-btn--ghost {
+      background-color: transparent;
+    }
+
+    .about-btn-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .about-btn-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: -0.42px;
+      white-space: nowrap;
+      color: #ffffff;
+    }
+
+    .about-cards {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: flex-start;
+      justify-content: center;
+      width: 1215px;
+      flex-shrink: 0;
+    }
+
+    .about-card {
+      border: 2px solid #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: flex-start;
+      overflow: hidden;
+      padding: 35px 25px;
+      border-radius: 10px;
+      width: 395px;
+      flex-shrink: 0;
+    }
+
+    .about-card__digit-frame {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .about-card__digit {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 153px;
+      line-height: 1.2;
+      letter-spacing: -12.24px;
+      color: #ff840b;
+      flex: 1 0 0;
+      min-width: 1px;
+      word-break: break-word;
+    }
+
+    .about-card__bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: flex-start;
+      padding: 0 10px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .about-card__subhead-frame,
+    .about-card__text-frame {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .about-card__subhead {
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1.2;
+      color: #ffffff;
+      flex: 1 0 0;
+      min-width: 1px;
+      word-break: break-word;
+    }
+
+    .about-card__text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.3;
+      color: #ffffff;
+      flex: 1 0 0;
+      min-width: 1px;
+      word-break: break-word;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="hero-bg">
+<section class="hero">
+
+  <!-- ── CONTENT ── -->
+  <div class="hero__head-block">
+    <div class="hero__head-lead">
+
+      <div class="hero__heading-frame">
+        <h1 class="hero__heading">
+          IT-аутсорсинг<br>
+          для бизнеса
+        </h1>
+      </div>
+
+      <div class="hero__lead-frame">
+        <p class="hero__lead">
+          Наша цель: сделать IT в вашей компании устойчивым,<br>
+          управляемым и предсказуемым
+        </p>
+      </div>
+
+    </div>
+
+    <div class="hero__buttons">
+      <a href="#" class="hero__btn hero__btn--primary">
+        <div class="hero__btn-inner">
+          <span class="hero__btn-text">Обсудить проект</span>
+        </div>
+      </a>
+      <a href="#" class="hero__btn hero__btn--secondary">
+        <div class="hero__btn-inner">
+          <span class="hero__btn-text">Подробнее</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FIGURE ── -->
+  <!--
+    5 isometric boxes. Each box = 3 SVG faces:
+      top   – full-box diamond (hex) = main colour
+      right – right-half parallelogram, black 20% overlay → darker right face
+      left  – left-half  parallelogram, black 10% overlay → slightly darker left face
+    Color key: orange #FF840B · blue #0040BF · gray #CCCCCC
+  -->
+  <div class="hero__figure">
+
+    <!-- BOX 1 — orange, tall, left -->
+    <div class="hero__box hero__box--1">
+      <div class="hero__face hero__face--top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#FF840B"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 2 — blue, small, far-left -->
+    <div class="hero__box hero__box--2">
+      <div class="hero__face hero__face--top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#0040BF"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 3 — blue, tall, right -->
+    <div class="hero__box hero__box--3">
+      <div class="hero__face hero__face--top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#0040BF"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 4 — gray, center -->
+    <div class="hero__box hero__box--4">
+      <div class="hero__face hero__face--top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#CCCCCC"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 5 — orange, small, far-right -->
+    <div class="hero__box hero__box--5">
+      <div class="hero__face hero__face--top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#FF840B"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="hero__face hero__face--left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.hero__figure -->
+
+</section>
+</div><!-- /.hero-bg -->
+
+
+<!-- ─ SVG symbols for iso-box faces ─ -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- top diamond face (84×96), fill via currentColor -->
+    <symbol id="iso-top" viewBox="0 0 84 96" preserveAspectRatio="none">
+      <path d="M0 72V24L42 0L84 24V72L42 96L0 72Z" fill="currentColor"/>
+    </symbol>
+    <!-- right parallelogram face (42×72), black 20% -->
+    <symbol id="iso-right" viewBox="0 0 42 72" preserveAspectRatio="none">
+      <path d="M0 24V72L42 48V0L0 24Z" fill="black" fill-opacity="0.2"/>
+    </symbol>
+    <!-- left parallelogram face (42×72), black 10% -->
+    <symbol id="iso-left" viewBox="0 0 42 72" preserveAspectRatio="none">
+      <path d="M0 0V48L42 72V24L0 0Z" fill="black" fill-opacity="0.1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — Закрываем ключевые задачи
+     Figma node 2003:4189
+     ═══════════════════════════════════════════════════════════ -->
+<section class="services">
+
+  <!-- HEAD -->
+  <div class="services__head">
+    <div class="services__head-inner">
+      <div class="services__title-block">
+        <p class="services__section-tag">Услуги</p>
+        <h2 class="services__heading">Закрываем<br>ключевые задачи</h2>
+      </div>
+      <div class="services__lead-wrap">
+        <p class="services__lead">Проектный подход, регламенты, SLA<br>и понятная зона ответственности.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="services__grid">
+
+    <!-- ── CARD 1: IT-аутсорсинг ── figure M12 / orange #FF840B ── -->
+    <div class="card">
+      <div class="card__top">
+        <h3 class="card__title">IT-аутсорсинг</h3>
+        <p class="card__desc">Поддержка и сопровождение IT-инфраструктуры компании: серверы, сети, рабочие места и сервисы.</p>
+        <a href="#" class="card__more">Подробнее &gt;</a>
+      </div>
+      <div class="card__list">
+        <div class="card__list-item">Поддержка инфраструктуры</div>
+        <div class="card__list-item">Service Desk и SLA</div>
+        <div class="card__list-item">Управление активами</div>
+        <div class="card__list-item">Внедрение систем</div>
+        <div class="card__list-item">Миграции и модернизации</div>
+      </div>
+      <!-- Figure M12 (252×120px): 3 boxes top row + 2 boxes bottom, orange -->
+      <div class="card__figures-block">
+        <div class="iso-figure" style="inset:94px 0.5px 66px 39.5px;">
+          <!-- B1 left:0 top:0 -->
+          <div class="iso-box" style="left:0;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B2 left:84 top:0 -->
+          <div class="iso-box" style="left:84px;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B3 left:168 top:0 -->
+          <div class="iso-box" style="left:168px;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B4 left:126 top:24 -->
+          <div class="iso-box" style="left:126px;top:24px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B5 left:42 top:24 -->
+          <div class="iso-box" style="left:42px;top:24px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CARD 2: Разработка в 1С ── figure L4 / blue #0040BF ── -->
+    <div class="card">
+      <div class="card__top">
+        <h3 class="card__title">Разработка в 1С</h3>
+        <p class="card__desc">Разработка, доработка и сопровождение решений на базе 1С. Производительность, обновления и интеграции с внешними системами.</p>
+        <a href="#" class="card__more">Подробнее &gt;</a>
+      </div>
+      <div class="card__list">
+        <div class="card__list-item">Разработка и доработка</div>
+        <div class="card__list-item">Автоматизация процессов</div>
+        <div class="card__list-item">Интеграции</div>
+        <div class="card__list-item">Обновление конфигураций</div>
+        <div class="card__list-item">Устранение ошибок</div>
+        <div class="card__list-item">Оптимизация производительности</div>
+      </div>
+      <!-- Figure L4 (168×240px): L-shape left column + staircase, blue -->
+      <div class="card__figures-block">
+        <div class="iso-figure" style="inset:23px 0.5px 17px 123.5px;">
+          <!-- B2 left:0 top:0 -->
+          <div class="iso-box" style="left:0;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B1 left:0 top:48 -->
+          <div class="iso-box" style="left:0;top:48px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B5 left:42 top:72 -->
+          <div class="iso-box" style="left:42px;top:72px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B3 left:42 top:120 -->
+          <div class="iso-box" style="left:42px;top:120px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B4 left:84 top:144 -->
+          <div class="iso-box" style="left:84px;top:144px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CARD 3: Devops ── figure Г2 / asphalt #666666 ── -->
+    <div class="card">
+      <div class="card__top">
+        <h3 class="card__title">Devops</h3>
+        <p class="card__desc">Автоматизация развертывания и сопровождения инфраструктуры: CI/CD, конфигурации, мониторинг.</p>
+        <a href="#" class="card__more">Подробнее &gt;</a>
+      </div>
+      <div class="card__list">
+        <div class="card__list-item">CI/CD процессы</div>
+        <div class="card__list-item">Управление релизами</div>
+        <div class="card__list-item">Kubernetes</div>
+        <div class="card__list-item">Автоматизация инфраструктуры</div>
+        <div class="card__list-item">Мониторинг и алертинг</div>
+      </div>
+      <!-- Figure Г2 (168×240px): inverted-L right column top + staircase left, asphalt -->
+      <div class="card__figures-block">
+        <div class="iso-figure" style="inset:20px 0.5px 20px 123.5px;">
+          <!-- B1 left:84 top:0 -->
+          <div class="iso-box" style="left:84px;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#666666"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B3 left:42 top:24 -->
+          <div class="iso-box" style="left:42px;top:24px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#666666"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B2 left:42 top:72 -->
+          <div class="iso-box" style="left:42px;top:72px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#666666"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B5 left:0 top:96 -->
+          <div class="iso-box" style="left:0;top:96px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#666666"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B4 left:0 top:144 -->
+          <div class="iso-box" style="left:0;top:144px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#666666"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CARD 4: Облачные решения ── figure M9 / gray #CCCCCC ── -->
+    <div class="card">
+      <div class="card__top">
+        <h3 class="card__title">Облачные решения</h3>
+        <p class="card__desc">Проектирование и внедрение облачной инфраструктуры под корпоративные задачи.</p>
+        <a href="#" class="card__more">Подробнее &gt;</a>
+      </div>
+      <div class="card__list">
+        <div class="card__list-item">Поддержка инфраструктуры</div>
+        <div class="card__list-item">Service Desk и SLA</div>
+        <div class="card__list-item">Управление активами</div>
+        <div class="card__list-item">Внедрение систем</div>
+        <div class="card__list-item">Миграции и модернизации</div>
+      </div>
+      <!-- Figure M9 (126×192px): zigzag 2-column, gray -->
+      <div class="card__figures-block">
+        <div class="iso-figure" style="inset:44px 0.5px 44px 165.5px;">
+          <!-- B1 left:0 top:0 -->
+          <div class="iso-box" style="left:0;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#CCCCCC"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B2 left:42 top:24 -->
+          <div class="iso-box" style="left:42px;top:24px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#CCCCCC"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B3 left:0 top:48 -->
+          <div class="iso-box" style="left:0;top:48px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#CCCCCC"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B4 left:42 top:72 -->
+          <div class="iso-box" style="left:42px;top:72px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#CCCCCC"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B5 left:0 top:96 -->
+          <div class="iso-box" style="left:0;top:96px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#CCCCCC"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CARD 5: AI-решения ── figure L8 / blue #0040BF ── -->
+    <div class="card">
+      <div class="card__top">
+        <h3 class="card__title">AI-решения</h3>
+        <p class="card__desc">Внедрение AI-инструментов для автоматизации и анализа данных. Интеграция AI-решений в существующие системы.</p>
+        <a href="#" class="card__more">Подробнее &gt;</a>
+      </div>
+      <div class="card__list">
+        <div class="card__list-item">Разработка и доработка</div>
+        <div class="card__list-item">Автоматизация процессов</div>
+        <div class="card__list-item">Интеграции</div>
+        <div class="card__list-item">Обновление конфигураций</div>
+        <div class="card__list-item">Устранение ошибок</div>
+        <div class="card__list-item">Оптимизация производительности</div>
+      </div>
+      <!-- Figure L8 (168×240px): L-shape right column top + staircase, blue -->
+      <div class="card__figures-block">
+        <div class="iso-figure" style="inset:0 0.5px 40px 123.5px;">
+          <!-- B2 left:84 top:0 -->
+          <div class="iso-box" style="left:84px;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B1 left:84 top:48 -->
+          <div class="iso-box" style="left:84px;top:48px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B4 left:42 top:72 -->
+          <div class="iso-box" style="left:42px;top:72px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B3 left:42 top:120 -->
+          <div class="iso-box" style="left:42px;top:120px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B5 left:0 top:144 -->
+          <div class="iso-box" style="left:0;top:144px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#0040BF"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CARD 6: Аварийное восстановление ── figure Г10 / orange #FF840B ── -->
+    <div class="card">
+      <div class="card__top">
+        <h3 class="card__title">Аварийное восстановление</h3>
+        <p class="card__desc">Восстановление работоспособности при авариях и простоях: сбои сервисов, потеря или шифрование данных.</p>
+        <a href="#" class="card__more">Подробнее &gt;</a>
+      </div>
+      <div class="card__list">
+        <div class="card__list-item">CI/CD процессы</div>
+        <div class="card__list-item">Управление релизами</div>
+        <div class="card__list-item">Kubernetes</div>
+        <div class="card__list-item">Автоматизация инфраструктуры</div>
+        <div class="card__list-item">Мониторинг и алертинг</div>
+      </div>
+      <!-- Figure Г10 (168×240px): inverted-L left column top + staircase right, orange -->
+      <div class="card__figures-block">
+        <div class="iso-figure" style="inset:0 0.5px 40px 123.5px;">
+          <!-- B1 left:0 top:0 -->
+          <div class="iso-box" style="left:0;top:0;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B3 left:42 top:24 -->
+          <div class="iso-box" style="left:42px;top:24px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B2 left:42 top:72 -->
+          <div class="iso-box" style="left:42px;top:72px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B5 left:84 top:96 -->
+          <div class="iso-box" style="left:84px;top:96px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+          <!-- B4 left:84 top:144 -->
+          <div class="iso-box" style="left:84px;top:144px;"><div class="iso-box__top"><svg><use href="#iso-top" style="color:#FF840B"/></svg></div><div class="iso-box__right"><svg><use href="#iso-right"/></svg></div><div class="iso-box__left"><svg><use href="#iso-left"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.services__grid -->
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — Закрываем задачи разными подходами
+     Figma node 2005:4427
+     ═══════════════════════════════════════════════════════════ -->
+<div class="sbi-bg">
+<section class="sbi-section">
+
+  <!-- ── FIGURE: 5 крупных боксов (405×462.857px), смещены на top:-346px ── -->
+  <div class="sbi-figure">
+
+    <!-- BOX 1 — синий, x:202.5, y:0 -->
+    <div class="sbi-box" style="left:202.5px;top:0;width:405px;height:462.857px;">
+      <div class="sbi-box__top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#0040BF"/>
+        </svg>
+      </div>
+      <div class="sbi-box__right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="sbi-box__left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 2 — оранжевый, x:0, y:115.714 -->
+    <div class="sbi-box" style="left:0;top:115.714px;width:405px;height:462.857px;">
+      <div class="sbi-box__top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#FF840B"/>
+        </svg>
+      </div>
+      <div class="sbi-box__right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="sbi-box__left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 3 — оранжевый, x:607.5, y:0 -->
+    <div class="sbi-box" style="left:607.5px;top:0;width:405px;height:462.857px;">
+      <div class="sbi-box__top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#FF840B"/>
+        </svg>
+      </div>
+      <div class="sbi-box__right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="sbi-box__left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 4 — серый, x:405, y:115.714 -->
+    <div class="sbi-box" style="left:405px;top:115.714px;width:405px;height:462.857px;">
+      <div class="sbi-box__top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#CCCCCC"/>
+        </svg>
+      </div>
+      <div class="sbi-box__right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="sbi-box__left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOX 5 — синий, x:810, y:115.714 -->
+    <div class="sbi-box" style="left:810px;top:115.714px;width:405px;height:462.857px;">
+      <div class="sbi-box__top">
+        <svg preserveAspectRatio="none" viewBox="0 0 405 462.833" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 347.101V115.685L202.5 0L405 115.685V347.101L202.5 462.833L0 347.101Z" fill="#0040BF"/>
+        </svg>
+      </div>
+      <div class="sbi-box__right">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 115.738V347.166L202.5 231.429V0L0 115.738Z" fill="black" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="sbi-box__left">
+        <svg preserveAspectRatio="none" viewBox="0 0 202.5 347.166" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V231.429L202.5 347.166V115.738L0 0Z" fill="black" fill-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+
+  </div><!-- /.sbi-figure -->
+
+  <!-- ── HEADING ── -->
+  <div class="sbi-content">
+    <h2 class="sbi-heading">
+      Закрываем задачи <span class="sbi-heading__word-wrap"><span class="sbi-heading__gradient">разными</span><span class="sbi-heading__underline"></span></span> подходами
+    </h2>
+  </div>
+
+</section>
+</div><!-- /.sbi-bg -->
+
+<!-- ─── CASES SECTION: Выполненные работы (node 2011:4447) ─── -->
+<div class="cases-bg">
+  <section class="cases-section">
+
+    <!-- Head block -->
+    <div class="cases-head">
+      <span class="cases-tag">Кейсы</span>
+      <h2 class="cases-heading">Выполненные работы</h2>
+    </div>
+
+    <!-- Tab buttons -->
+    <nav>
+      <ul class="cases-tabs" id="casesTabs">
+        <li><button class="cases-tab cases-tab--active" data-index="0">Все</button></li>
+        <li><button class="cases-tab" data-index="1">IT-аутсорсинг</button></li>
+        <li><button class="cases-tab" data-index="2">DevOps</button></li>
+        <li><button class="cases-tab" data-index="3">Облачные решения</button></li>
+        <li><button class="cases-tab" data-index="4">1С</button></li>
+      </ul>
+    </nav>
+
+    <!-- Slider -->
+    <div class="cases-slider" id="casesSlider">
+
+      <!-- Left arrow -->
+      <button class="cases-arrow cases-arrow--disabled" id="casesArrowPrev" aria-label="Назад">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L3 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Slide 0: Все / DevOps -->
+      <div class="cases-card cases-card--active" data-slide="0">
+        <div class="cases-card__left">
+          <div class="cases-card__top">
+            <h3 class="cases-card__title">Восстановление после сбоя</h3>
+            <p class="cases-card__desc">Быстрое восстановление данных и сервисов при критических ситуациях. Настройка автоматических резервных копий и процедур failover для обеспечения непрерывности бизнеса.</p>
+            <div class="cases-card__tags">
+              <span class="cases-card__tag">#восстановление</span>
+              <span class="cases-card__tag">#отказоустойчивость</span>
+              <span class="cases-card__tag">#скорость</span>
+            </div>
+          </div>
+          <a href="#" class="cases-card__link">Подробнее &gt;</a>
+        </div>
+        <div class="cases-card__scheme">
+          <img src="assets/scheme-cicd.jpg" alt="Схема CI/CD pipeline" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <!-- Slide 1: IT-аутсорсинг -->
+      <div class="cases-card" data-slide="1">
+        <div class="cases-card__left">
+          <div class="cases-card__top">
+            <h3 class="cases-card__title">Комплексный IT-аутсорсинг</h3>
+            <p class="cases-card__desc">Полное сопровождение IT-инфраструктуры компании: от поддержки рабочих мест до управления серверами и сетевым оборудованием.</p>
+            <div class="cases-card__tags">
+              <span class="cases-card__tag">#аутсорсинг</span>
+              <span class="cases-card__tag">#поддержка</span>
+              <span class="cases-card__tag">#инфраструктура</span>
+            </div>
+          </div>
+          <a href="#" class="cases-card__link">Подробнее &gt;</a>
+        </div>
+        <div class="cases-card__scheme">
+          <img src="assets/scheme-cicd.jpg" alt="Схема IT-аутсорсинга" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <!-- Slide 2: DevOps -->
+      <div class="cases-card" data-slide="2">
+        <div class="cases-card__left">
+          <div class="cases-card__top">
+            <h3 class="cases-card__title">Построение CI/CD пайплайна</h3>
+            <p class="cases-card__desc">Автоматизация процессов сборки, тестирования и деплоя приложений. Сокращение time-to-market и повышение качества релизов.</p>
+            <div class="cases-card__tags">
+              <span class="cases-card__tag">#cicd</span>
+              <span class="cases-card__tag">#автоматизация</span>
+              <span class="cases-card__tag">#devops</span>
+            </div>
+          </div>
+          <a href="#" class="cases-card__link">Подробнее &gt;</a>
+        </div>
+        <div class="cases-card__scheme">
+          <img src="assets/scheme-cicd.jpg" alt="Схема DevOps" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <!-- Slide 3: Облачные решения -->
+      <div class="cases-card" data-slide="3">
+        <div class="cases-card__left">
+          <div class="cases-card__top">
+            <h3 class="cases-card__title">Миграция в облако</h3>
+            <p class="cases-card__desc">Перенос on-premise инфраструктуры в облачную среду с минимальным простоем. Оптимизация затрат и масштабируемость ресурсов.</p>
+            <div class="cases-card__tags">
+              <span class="cases-card__tag">#облако</span>
+              <span class="cases-card__tag">#миграция</span>
+              <span class="cases-card__tag">#масштабирование</span>
+            </div>
+          </div>
+          <a href="#" class="cases-card__link">Подробнее &gt;</a>
+        </div>
+        <div class="cases-card__scheme">
+          <img src="assets/scheme-cicd.jpg" alt="Схема облачной миграции" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <!-- Slide 4: 1С -->
+      <div class="cases-card" data-slide="4">
+        <div class="cases-card__left">
+          <div class="cases-card__top">
+            <h3 class="cases-card__title">Внедрение и поддержка 1С</h3>
+            <p class="cases-card__desc">Внедрение, настройка и сопровождение решений на платформе 1С:Предприятие. Интеграция с внешними системами и оптимизация бизнес-процессов.</p>
+            <div class="cases-card__tags">
+              <span class="cases-card__tag">#1с</span>
+              <span class="cases-card__tag">#автоматизация</span>
+              <span class="cases-card__tag">#интеграция</span>
+            </div>
+          </div>
+          <a href="#" class="cases-card__link">Подробнее &gt;</a>
+        </div>
+        <div class="cases-card__scheme">
+          <img src="assets/scheme-cicd.jpg" alt="Схема 1С" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <!-- Right arrow -->
+      <button class="cases-arrow cases-arrow--next" id="casesArrowNext" aria-label="Вперёд">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 1l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </div><!-- /.cases-slider -->
+
+  </section>
+</div><!-- /.cases-bg -->
+
+<script>
+(function () {
+  var tabs = Array.from(document.querySelectorAll('#casesTabs .cases-tab'));
+  var slides = Array.from(document.querySelectorAll('[data-slide]'));
+  var prevBtn = document.getElementById('casesArrowPrev');
+  var nextBtn = document.getElementById('casesArrowNext');
+  var current = 0;
+  var total = slides.length;
+
+  function goTo(idx) {
+    slides[current].classList.remove('cases-card--active');
+    tabs[current].classList.remove('cases-tab--active');
+    current = (idx + total) % total;
+    slides[current].classList.add('cases-card--active');
+    tabs[current].classList.add('cases-tab--active');
+    prevBtn.className = 'cases-arrow ' + (current === 0 ? 'cases-arrow--disabled' : 'cases-arrow--prev');
+    nextBtn.className = 'cases-arrow ' + (current === total - 1 ? 'cases-arrow--disabled' : 'cases-arrow--next');
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { goTo(i); });
+  });
+
+  prevBtn.addEventListener('click', function () {
+    if (current > 0) goTo(current - 1);
+  });
+
+  nextBtn.addEventListener('click', function () {
+    if (current < total - 1) goTo(current + 1);
+  });
+
+  goTo(0);
+}());
+</script>
+
+
+<div class="about-bg">
+
+  <!-- 3D cube figure (background) -->
+  <div class="about-figure-wrap">
+    <img class="about-figure" src="assets/about-figure.png" alt="">
+  </div>
+
+  <section class="about-section">
+
+    <!-- Head block -->
+    <div class="about-content">
+      <div class="about-head-lead">
+        <div class="about-title-block">
+          <p class="about-tag">О компании</p>
+          <p class="about-heading">Команда экспертов</p>
+        </div>
+        <div class="about-lead-wrap">
+          <p class="about-lead">Надёжность измеряется не обещаниями, а временем между сбоями. Вот что даёт инфраструктура, построенная<br>на фундаменте, а не на воздухе</p>
+        </div>
+      </div>
+      <div class="about-buttons">
+        <a href="#" class="about-btn about-btn--primary">
+          <div class="about-btn-inner"><span class="about-btn-text">Связаться с нами</span></div>
+        </a>
+        <a href="#" class="about-btn about-btn--ghost">
+          <div class="about-btn-inner"><span class="about-btn-text">Подробнее &gt;</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="about-card__digit-frame">
+          <p class="about-card__digit">500+</p>
+        </div>
+        <div class="about-card__bottom">
+          <div class="about-card__subhead-frame">
+            <p class="about-card__subhead">Серверов на сопровождении 24/7</p>
+          </div>
+          <div class="about-card__text-frame">
+            <p class="about-card__text">Поддержка работоспособности, обновления и модернизации по SLA</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card__digit-frame">
+          <p class="about-card__digit">50+</p>
+        </div>
+        <div class="about-card__bottom">
+          <div class="about-card__subhead-frame">
+            <p class="about-card__subhead">Выполненных проектов разработки в 1С</p>
+          </div>
+          <div class="about-card__text-frame">
+            <p class="about-card__text">Доработки, интеграции, отчётность и автоматизация бизнес-процессов</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card__digit-frame">
+          <p class="about-card__digit">5</p>
+        </div>
+        <div class="about-card__bottom">
+          <div class="about-card__subhead-frame">
+            <p class="about-card__subhead">Датацентров с собственной инфраструктурой</p>
+          </div>
+          <div class="about-card__text-frame">
+            <p class="about-card__text">Отказоустойчивое оборудование в дата-центрах Tier-III в России и в ЕС</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div><!-- /.about-bg -->
+
+</body>
+</html>

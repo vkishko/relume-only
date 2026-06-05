@@ -1,0 +1,1075 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  -->
+<html data-wf-page="69ff91fdb43935c00daecd87" data-wf-site="69fa2db34a07dabdc28b9a9c">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta content="Home" property="og:title">
+  <meta content="Home" property="twitter:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/only-devops.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+  }
+
+  /* === Hero (header33) === */
+  .section_header33 { position: relative; display: flex; align-items: center; min-height: 85vh; overflow: hidden; }
+  .section_header33 > .padding-global { width: 100%; }
+  .header33_content { position: relative; z-index: 2; width: 100%; }
+  .header33_background-video-wrapper { position: absolute; inset: 0; z-index: 0; }
+  .header33_background-video { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .video-overlay-layer { position: absolute; inset: 0; z-index: 1; }
+
+  /* === Intro split (header49) — только сетка и отступы между колонками === */
+  .section_header49 { background-color: #f2f2f2; }
+  .section_header49 .header49_content {
+    grid-column-gap: 5rem;
+    grid-row-gap: 4rem;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    align-items: start;
+  }
+  .section_header49 .header49_content-left,
+  .section_header49 .header49_content-right { min-width: 0; }
+  @media screen and (max-width: 991px) {
+    .section_header49 .header49_content {
+      grid-column-gap: 3rem;
+      grid-row-gap: 2rem;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .section_header49 .header49_content {
+      grid-column-gap: 1.25rem;
+      grid-row-gap: 1.25rem;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* === Approaches header (header70) === */
+  .section_header70 { position: relative; display: flex; align-items: center; overflow: hidden; }
+  .section_header70 > .padding-global { width: 100%; }
+  .header70_component { position: relative; z-index: 2; width: 100%; }
+  .header70_background-video-wrapper { position: absolute; inset: 0; z-index: 0; }
+  .header70_background-video { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* === Service cards (home_section-2) === */
+  .home_section-2_grid-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .home_section-2_row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .home-v51_two-column-tasks .home_section-2_row { grid-template-columns: repeat(2, 1fr); }
+  .home_section-2_card { border: 1px solid var(--color-scheme-1--border); padding: 2rem 2rem 1.5rem; border-radius: 0.5rem; display: flex; flex-direction: column; }
+  .home_section-2_card-content { height: 100%; }
+  .home_section-2_card-content-top { display: flex; flex-direction: column; height: 100%; }
+
+  /* === Услуги и Решения: responsive === */
+  .section_home_section-2 .home_section-2_grid-list,
+  .section_home_section-2 .home_section-2_row,
+  .section_home_section-2 .home_section-2_card { min-width: 0; max-width: 100%; }
+  @media screen and (max-width: 991px) {
+    .section_home_section-2 .home_section-2_row,
+    .section_home_section-2.home-v51_two-column-tasks .home_section-2_row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media screen and (max-width: 767px) {
+    /* Компенсация padding-global 5% без 100vw */
+    .section_home_section-2 .home_section-2_scroll {
+      container-type: inline-size;
+      width: calc(100% / 0.9);
+      margin-left: calc(-5% / 0.9);
+      margin-right: calc(-5% / 0.9);
+      min-width: 0;
+      overflow-x: clip;
+    }
+    .section_home_section-2 .home_section-2_grid-list,
+    .section_home_section-2 .home_section-2_row {
+      max-width: none;
+      min-width: 0;
+    }
+    /* flex-column + max-content row раздувает document — только block + inline-flex */
+    .section_home_section-2 .home_section-2_grid-list {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      width: 100%;
+    }
+    .section_home_section-2 .home_section-2_grid-list::-webkit-scrollbar {
+      display: none;
+    }
+    .section_home_section-2 .home_section-2_row,
+    .section_home_section-2.home-v51_two-column-tasks .home_section-2_row {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      gap: 1rem;
+      width: max-content;
+      grid-template-columns: unset;
+      padding-inline: 5%;
+    }
+    .section_home_section-2 .home_section-2_card {
+      flex: 0 0 auto;
+      width: min(22rem, calc(90cqw - 2rem));
+      min-width: 330px;
+      padding: 1.5rem 1.25rem 1.25rem;
+      scroll-snap-align: start;
+    }
+    /* Только «хоп» при загрузке: snap не тянет первую карточку к краю */
+    .section_home_section-2 .home_section-2_card:first-child {
+      scroll-snap-align: none;
+    }
+    .section_home_section-2 .home-v22_task-links { padding-top: 2.5rem; }
+    .section_home_section-2 .home-v22_task-link-heading { font-size: 1rem; }
+    @media screen and (max-width: 479px) {
+      /* Почти на всю ширину; следующая карточка видна ~28px */
+      .section_home_section-2 .home_section-2_card {
+        width: calc(95cqw - 1rem - 28px);
+        min-width: 0;
+      }
+    }
+  }
+
+  /* === Projects (blog12 / home_section-4) === */
+  .section_blog12 .category-filter-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+  }
+  .section_blog12 .category-filter-link {
+    flex: 0 1 auto;
+    white-space: normal;
+    text-align: center;
+  }
+  .blog12_list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .home_section-4_item { display: flex; flex-direction: column; }
+  .home_section-4_item-link { display: flex; flex-direction: column; flex: 1; }
+  .home_section-4_image-wrapper { overflow: hidden; border-radius: 0.5rem; background: var(--color-scheme-1--foreground); }
+  .home_section-4_image2 { width: 100%; height: auto; display: block; }
+  .home_section-4_tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  /* === Stats/experts (home_header) === */
+  .home_header_content { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+  .home_header_list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .home_header_item { padding: 1.5rem; border-radius: 0.5rem; }
+  .home_header_number { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; line-height: 1; }
+  .home_header_item-content {}
+
+  /* === How we work (layout608) === */
+  .layout608_list { border-top: 1px solid var(--color-scheme-1--border); }
+  .layout608_item { display: grid; grid-template-columns: 4rem 1fr; gap: 2rem; align-items: start; padding: 2rem 0; border-bottom: 1px solid var(--color-scheme-1--border); }
+
+  /* === Reviews (home_devops) === */
+  .home_devops_grid-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .home_devops_content { padding: 2rem; border: 1px solid rgba(255,255,255,0.22); border-radius: 0.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .home_devops_logo-wrapper { height: 1.5rem; display: flex; align-items: center; }
+  .home_devops_logo { height: 100%; width: auto; max-width: 8rem; object-fit: contain; }
+  .home_devops_client { display: flex; flex-direction: column; gap: 0.25rem; margin-top: auto; }
+  .home_devops_client-image-wrapper { width: 2.75rem; height: 2.75rem; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; }
+  .home_devops_client-image { width: 100%; height: 100%; object-fit: cover; }
+
+  /* === Advantages (it_hero-header) === */
+  .it_hero-header_list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .it_hero-header_item { padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--color-scheme-1--border); }
+
+  /* === Contact form (home_testimonial) === */
+  .home_testimonial_form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  /* === Footer dark (footer3) === */
+  .footer3_top-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    grid-column-gap: 5rem;
+    grid-row-gap: 3rem;
+    align-items: start;
+  }
+  .footer3_left-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    min-width: 0;
+  }
+  .footer3_logo-link {
+    float: none;
+    display: inline-block;
+    padding-left: 0;
+  }
+  .footer3_logo { height: 2.25rem; width: auto; display: block; }
+  .footer3_details-wrapper { display: flex; flex-direction: column; gap: 0.25rem; width: 100%; }
+  .footer3_details-wrapper a { display: block; }
+  .footer3_social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .footer3_social-link { display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; }
+  .footer3_menu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    align-items: start;
+    min-width: 0;
+  }
+  .footer3_link-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer3_link { color: inherit !important; text-decoration: none; font-size: 0.875rem; opacity: 0.78; }
+  .footer3_link:hover { opacity: 1; }
+  .footer3_bottom-wrapper { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer3_credit-text { font-size: 0.875rem; opacity: 0.6; }
+  .footer3_legal-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .footer3_legal-link { font-size: 0.875rem; color: inherit !important; opacity: 0.6; text-decoration: none; }
+  .footer3_legal-link:hover { opacity: 1; }
+  .divider-horizontal { height: 1px; background-color: rgba(255,255,255,0.15); width: 100%; }
+
+  /* === HOME v22: service card task links === */
+  .home-v22_task-links { display: grid; gap: 0.625rem; margin-top: auto; padding-top: 3.5rem; }
+  .home-v22_task-link-heading { margin: 0; font-size: clamp(1rem, 1.1vw, 1.125rem); line-height: 1.35; font-weight: 600; letter-spacing: -0.01em; }
+  .home-v22_task-link { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; transition: opacity 200ms ease, border-color 200ms ease; }
+  .home-v22_task-link:hover { opacity: 0.72; border-color: transparent; }
+  .home-v22_task-card-body { display: flex; flex: 1 1 auto; flex-direction: column; justify-content: flex-start; min-height: 100%; height: 100%; }
+  .home-v22_task-button { margin-top: 1.25rem !important; margin-bottom: 0; }
+
+  /* === HOME v25: black hero === */
+  .home-v53_hero-navbar-blue {
+    background-color: #051133;
+    color: #fff;
+  }
+  .home-v53_hero-navbar-blue .heading-style-h1, .home-v53_hero-navbar-blue .text-size-medium { color: #fff; }
+  .home-v53_hero-navbar-blue .header33_background-video-wrapper,
+  .home-v53_hero-navbar-blue .video-overlay-layer {
+    background-color: #051133;
+    background-image: none;
+  }
+  .home-v25_dark-section { background-color: #000; color: #fff; }
+  .home-v25_dark-section .heading-style-h1, .home-v25_dark-section .heading-style-h2, .home-v25_dark-section .heading-style-h3, .home-v25_dark-section .heading-style-h4, .home-v25_dark-section .heading-style-h5, .home-v25_dark-section .heading-style-h6, .home-v25_dark-section .text-size-medium, .home-v25_dark-section .text-size-regular, .home-v25_dark-section .text-style-tagline, .home-v25_dark-section p, .home-v25_dark-section .home_header_number { color: #fff; }
+  .home-v25_dark-section .header70_background-video-wrapper, .home-v25_dark-section .video-overlay-layer { background-color: #000; background-image: none; }
+
+  /* === HOME v31: approaches blue === */
+  .home-v31_approaches-client-color { background-color: #0b5fa5; color: #fff; }
+  .home-v31_approaches-client-color .heading-style-h1, .home-v31_approaches-client-color .text-size-medium { color: #fff; }
+  .home-v31_approaches-client-color .header70_background-video-wrapper, .home-v31_approaches-client-color .video-overlay-layer { background-color: #0b5fa5; background-image: none; }
+
+  /* === HOME v32: reviews blue === */
+  .home-v32_reviews-client-color { background-color: #0b5fa5; color: #fff; }
+  .home-v32_reviews-client-color .heading-style-h2, .home-v32_reviews-client-color .heading-style-h6, .home-v32_reviews-client-color .text-size-medium, .home-v32_reviews-client-color .text-weight-semibold, .home-v32_reviews-client-color p, .home-v32_reviews-client-color div { color: #fff; }
+  .home-v32_reviews-client-color .home_devops_client-image-wrapper { border: 1px solid rgba(255,255,255,0.3); }
+  .home-v32_reviews-client-color .home_devops_logo { filter: brightness(0) invert(1); }
+
+  /* === HOME v33: experts dark blue === */
+  .home-v33_experts { background-color: #042642; color: #fff; }
+  .home-v33_experts .home_header_content, .home-v33_experts .home_header_list { color: #fff; }
+  .home-v33_experts .home_header_item { border: 1px solid rgba(255,255,255,0.22); background-color: rgba(255,255,255,0.06); box-shadow: 0 18px 48px rgba(0,0,0,0.32); }
+  .home-v33_experts .home_header_item:hover,
+  .home-v33_experts .home_header_item:active,
+  .home-v33_experts .home_header_item:focus {
+    border-color: rgba(255,255,255,0.22);
+    background-color: rgba(255,255,255,0.06);
+  }
+  .home-v33_experts .home_header_number, .home-v33_experts .heading-style-h3, .home-v33_experts .heading-style-h6, .home-v33_experts .text-size-medium, .home-v33_experts p { color: #fff; }
+  .home-v33_experts .home_header_item p { color: rgba(255,255,255,0.78); }
+
+  /* === HOME v50: advantages gray === */
+  .home-v50_advantages-gray { background-color: #f2f2f2; color: #010806; }
+  .home-v50_advantages-gray .heading-style-h2, .home-v50_advantages-gray .heading-style-h4, .home-v50_advantages-gray .text-size-medium, .home-v50_advantages-gray p { color: #010806; }
+  .home-v50_advantages-gray .it_hero-header_item { background-color: #fff; border-color: rgba(1,8,6,0.14); box-shadow: none; }
+
+  /* === HOME v29: black footer === */
+  .home-v29_footer-dark { background-color: #000 !important; color: #fff !important; }
+  .home-v29_footer-dark, .home-v29_footer-dark * { color: #fff !important; }
+  .home-v29_footer-dark a, .home-v29_footer-dark .footer3_link, .home-v29_footer-dark .footer3_legal-link, .home-v29_footer-dark .footer3_credit-text, .home-v29_footer-dark .text-size-small { color: #fff !important; opacity: 1; }
+  .home-v29_footer-dark .footer3_social-link { border-color: rgba(255,255,255,0.22) !important; }
+  .home-v29_footer-dark .divider-horizontal { background-color: rgba(255,255,255,0.22) !important; }
+  .home-v29_footer-dark .footer3_logo { filter: brightness(0) invert(1); }
+
+  /* === Navbar (burger ≤1199px, was Webflow 991px) === */
+  @media screen and (max-width: 1199px) {
+    .navbar11_component.w-nav[data-collapse='medium'] .w-nav-menu {
+      display: none;
+    }
+    .navbar11_component.w-nav[data-collapse='medium'] .w-nav-button {
+      display: block;
+    }
+    .menu-icon1 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      margin-right: -.5rem;
+      padding-bottom: 0;
+      padding-right: 0;
+      display: flex;
+    }
+    .navbar11_menu {
+      border-bottom: 1px solid var(--color-scheme-1--border);
+      background-color: var(--color-scheme-1--background);
+      -webkit-text-fill-color: inherit;
+      background-clip: border-box;
+      padding: 1rem 5% 2rem;
+      position: absolute;
+      overflow: auto;
+      align-items: stretch;
+      flex-direction: column;
+      display: none;
+      float: none;
+    }
+    .navbar11_menu.is-page-height-tablet {
+      height: 100dvh;
+      padding-bottom: 6.5rem;
+      transition: height .5s;
+    }
+    .navbar11_link {
+      width: auto;
+      padding: .75rem 0;
+      font-size: 1.125rem;
+    }
+    .navbar11_menu-button.w--open {
+      background-color: var(--_primitives---opacity--transparent);
+    }
+    .dropdown-chevron {
+      inset: auto 0% auto auto;
+    }
+    .navbar11_menu-dropdown {
+      width: 100%;
+      font-size: 1.125rem;
+    }
+    .menu-icon1_line-top,
+    .menu-icon1_line-bottom {
+      background-color: var(--color-scheme-1--text);
+      width: 24px;
+      height: 2px;
+      padding-bottom: 0;
+      padding-right: 0;
+    }
+    .navbar11_dropdown-list {
+      position: static;
+      overflow: hidden;
+    }
+    .navbar11_dropdown-list.w--open {
+      border-style: none;
+      width: auto;
+      padding: 0;
+    }
+    .navbar11_dropdown-link-list {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .navbar11_dropdown-toggle {
+      align-items: center;
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      padding-left: 0;
+      display: flex;
+    }
+    .navbar11_menu-buttons {
+      flex-direction: column;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+      margin-top: 1.5rem;
+      margin-left: 0;
+    }
+    .menu-icon1_line-middle {
+      background-color: var(--color-scheme-1--text);
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 2px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      padding-bottom: 0;
+      padding-right: 0;
+      display: flex;
+    }
+    .menu-icon1_line-middle-inner {
+      width: 4px;
+      height: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .navbar11_component.w-nav[data-collapse='medium'] .w-nav-button {
+      display: none !important;
+    }
+    .navbar11_component.w-nav[data-collapse='medium'] .w-nav-menu {
+      display: flex !important;
+      position: static !important;
+      float: none !important;
+      align-items: center;
+    }
+    .navbar11_menu {
+      align-items: center;
+      display: flex !important;
+      position: static !important;
+    }
+    .navbar11_menu-buttons {
+      flex-direction: row;
+      align-items: center;
+      margin-left: 1rem;
+    }
+    .navbar11_link {
+      padding: .5rem 1rem;
+    }
+    .navbar11_dropdown-list.w--open {
+      border: var(--_ui-styles---stroke--border-width) solid var(--color-scheme-1--border);
+      border-radius: var(--_ui-styles---radius--small);
+      background-color: var(--color-scheme-1--background);
+      width: 20rem;
+      padding: 1.5rem;
+      position: absolute;
+    }
+    .navbar11_dropdown-list {
+      position: absolute;
+    }
+    .navbar11_dropdown-toggle {
+      padding: .5rem 1rem;
+    }
+  }
+  @media screen and (max-width: 1439px) {
+    .navbar11_menu-buttons .button.is-secondary.is-alternate {
+      display: none !important;
+    }
+  }
+
+  /* === Responsive === */
+  @media (max-width: 991px) {
+    .home_header_content { grid-template-columns: 1fr; gap: 2rem; }
+    .home_header_list { grid-template-columns: repeat(2, 1fr); }
+    .home_devops_grid-list { grid-template-columns: 1fr; }
+    .it_hero-header_list { grid-template-columns: repeat(2, 1fr); }
+    .footer3_top-wrapper { grid-template-columns: minmax(0, 1fr); grid-column-gap: 0; grid-row-gap: 3rem; }
+    .blog12_list { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 767px) {
+    .home_header_list { grid-template-columns: 1fr; }
+    .it_hero-header_list { grid-template-columns: 1fr; }
+    .layout608_item { grid-template-columns: 3rem 1fr; }
+    .footer3_menu-wrapper { grid-template-columns: minmax(0, 1fr); }
+    .footer3_bottom-wrapper { flex-direction: column; align-items: flex-start; }
+    .footer3_legal-list { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="global-styles">
+      <div class="style-overrides w-embed">
+        <style>
+a, .w-input, .w-select, .w-tab-link, .w-nav-link, .w-nav-brand, .w-dropdown-btn, .w-dropdown-toggle, .w-slider-arrow-left, .w-slider-arrow-right, .w-dropdown-link { color: inherit; text-decoration: inherit; font-size: inherit; }
+*[tabindex]:focus-visible, input[type="file"]:focus-visible { outline: 0.125rem solid #4d65ff; outline-offset: 0.125rem; }
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child { margin-top: 0 !important; }
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child { margin-bottom: 0 !important; }
+.pointer-events-off { pointer-events: none; }
+.pointer-events-on { pointer-events: auto; }
+.div-square::after { content: ""; display: block; padding-bottom: 100%; }
+.container-medium, .container-small, .container-large { margin-right: auto !important; margin-left: auto !important; }
+.text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.text-style-2lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.display-inlineflex { display: inline-flex; }
+.hide { display: none !important; }
+select { -webkit-appearance: none; }
+@media screen and (max-width: 991px) { .hide, .hide-tablet { display: none !important; } }
+@media screen and (max-width: 767px) { .hide-mobile-landscape { display: none !important; } }
+@media screen and (max-width: 479px) { .hide-mobile { display: none !important; } }
+.margin-0 { margin: 0rem !important; }
+.padding-0 { padding: 0rem !important; }
+.spacing-clean { padding: 0rem !important; margin: 0rem !important; }
+.margin-top { margin-right: 0rem !important; margin-bottom: 0rem !important; margin-left: 0rem !important; }
+.padding-top { padding-right: 0rem !important; padding-bottom: 0rem !important; padding-left: 0rem !important; }
+.margin-right { margin-top: 0rem !important; margin-bottom: 0rem !important; margin-left: 0rem !important; }
+.padding-right { padding-top: 0rem !important; padding-bottom: 0rem !important; padding-left: 0rem !important; }
+.margin-bottom { margin-top: 0rem !important; margin-right: 0rem !important; margin-left: 0rem !important; }
+.padding-bottom { padding-top: 0rem !important; padding-right: 0rem !important; padding-left: 0rem !important; }
+.margin-left { margin-top: 0rem !important; margin-right: 0rem !important; margin-bottom: 0rem !important; }
+.padding-left { padding-top: 0rem !important; padding-right: 0rem !important; padding-bottom: 0rem !important; }
+.margin-horizontal { margin-top: 0rem !important; margin-bottom: 0rem !important; }
+.padding-horizontal { padding-top: 0rem !important; padding-bottom: 0rem !important; }
+.margin-vertical { margin-right: 0rem !important; margin-left: 0rem !important; }
+.padding-vertical { padding-right: 0rem !important; padding-left: 0rem !important; }
+.truncate-width { width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.no-scrollbar { -ms-overflow-style: none; overflow: -moz-scrollbars-none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+a.w-webflow-badge { display: none !important; }
+        </style>
+      </div>
+      <div class="fonts w-embed">
+        <style>@import url('https://fonts.googleapis.com/css?family=Inter%20Tight:500')</style>
+        <style>@import url('https://fonts.googleapis.com/css?family=Inter:400,500')</style>
+      </div>
+      <div class="color-schemes w-embed">
+        <style>
+.color-scheme-1 {}
+.color-scheme-2 { --color-scheme-1--text: var(--color-scheme-2--text); --color-scheme-1--background: var(--color-scheme-2--background); --color-scheme-1--foreground: var(--color-scheme-2--foreground); --color-scheme-1--border: var(--color-scheme-2--border); --color-scheme-1--accent: var(--color-scheme-2--accent); }
+.color-scheme-3 { --color-scheme-1--text: var(--color-scheme-3--text); --color-scheme-1--background: var(--color-scheme-3--background); --color-scheme-1--foreground: var(--color-scheme-3--foreground); --color-scheme-1--border: var(--color-scheme-3--border); --color-scheme-1--accent: var(--color-scheme-3--accent); }
+.color-scheme-4 { --color-scheme-1--text: var(--color-scheme-4--text); --color-scheme-1--background: var(--color-scheme-4--background); --color-scheme-1--foreground: var(--color-scheme-4--foreground); --color-scheme-1--border: var(--color-scheme-4--border); --color-scheme-1--accent: var(--color-scheme-4--accent); }
+.color-scheme-5 { --color-scheme-1--text: var(--color-scheme-5--text); --color-scheme-1--background: var(--color-scheme-5--background); --color-scheme-1--foreground: var(--color-scheme-5--foreground); --color-scheme-1--border: var(--color-scheme-5--border); --color-scheme-1--accent: var(--color-scheme-5--accent); }
+.w-slider-dot { background-color: var(--color-scheme-1--text); opacity: 0.20; }
+.w-slider-dot.w-active { background-color: var(--color-scheme-1--text); opacity: 1; }
+.w-slider-nav-invert .w-slider-dot { background-color: var(--color-scheme-1--text) !important; opacity: 0.20 !important; }
+.w-slider-nav-invert .w-slider-dot.w-active { background-color: var(--color-scheme-1--text) !important; opacity: 1 !important; }
+        </style>
+      </div>
+    </div>
+    <div data-collapse="medium" data-animation="default" data-duration="400" fs-scrolldisable-element="smart-nav" data-easing="ease" data-easing2="ease" role="banner" class="navbar11_component color-scheme-4 w-nav">
+      <div class="navbar11_container">
+        <a href="#" class="navbar11_logo-link w-nav-brand"><img loading="eager" height="36px" alt="" src="images/relume-914021.png" class="navbar11_logo"></a>
+        <nav role="navigation" class="navbar11_menu is-page-height-tablet w-nav-menu">
+          <div class="navbar11_menu-links">
+            <div data-delay="200" data-hover="true" class="navbar11_menu-dropdown w-dropdown">
+              <div class="navbar11_dropdown-toggle w-dropdown-toggle">
+                <div>Услуги и решения</div>
+                <div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"></path></svg></div>
+              </div>
+              <nav class="navbar11_dropdown-list w-dropdown-list">
+                <div class="navbar11_dropdown-link-list">
+                  <a href="#" class="navbar11_dropdown-link w-inline-block">
+                    <div class="navbar11_icon-wrapper"><div class="icon-embed-xsmall w-embed"><svg width="currentWidth" height="currentHeight" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.73 7.12L20.59 6.87C20.4094 6.56769 20.1547 6.31643 19.85 6.14L13.14 2.27C12.8362 2.09375 12.4913 2.00062 12.14 2H11.85C11.4987 2.00062 11.1538 2.09375 10.85 2.27L4.14 6.15C3.83697 6.32526 3.58526 6.57697 3.41 6.88L3.27 7.13C3.09375 7.43384 3.00062 7.77874 3 8.13V15.88C3.00062 16.2313 3.09375 16.5762 3.27 16.88L3.41 17.13C3.58979 17.4295 3.84049 17.6802 4.14 17.86L10.86 21.73C11.1623 21.9099 11.5082 22.0033 11.86 22H12.14C12.4913 21.9994 12.8362 21.9063 13.14 21.73L19.85 17.85C20.156 17.6787 20.4087 17.426 20.58 17.12L20.73 16.87C20.9041 16.5653 20.9971 16.221 21 15.87V8.12C20.9994 7.76874 20.9063 7.42384 20.73 7.12ZM11.85 4H12.14L18 7.38L12 10.84L6 7.38L11.85 4ZM13 19.5L18.85 16.12L19 15.87V9.11L13 12.58V19.5Z" fill="currentColor"></path></svg></div></div>
+                    <div class="navbar11_text-wrapper">
+                      <div class="text-weight-semibold">Поддержка инфраструктуры</div>
+                      <p class="text-size-small text-size-small-2 hide-mobile-landscape">Управление IT-системами для вашего бизнеса</p>
+                    </div>
+                  </a>
+                  <a href="#" class="navbar11_dropdown-link w-inline-block">
+                    <div class="navbar11_icon-wrapper"><div class="icon-embed-xsmall w-embed"><svg width="currentWidth" height="currentHeight" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.73 7.12L20.59 6.87C20.4094 6.56769 20.1547 6.31643 19.85 6.14L13.14 2.27C12.8362 2.09375 12.4913 2.00062 12.14 2H11.85C11.4987 2.00062 11.1538 2.09375 10.85 2.27L4.14 6.15C3.83697 6.32526 3.58526 6.57697 3.41 6.88L3.27 7.13C3.09375 7.43384 3.00062 7.77874 3 8.13V15.88C3.00062 16.2313 3.09375 16.5762 3.27 16.88L3.41 17.13C3.58979 17.4295 3.84049 17.6802 4.14 17.86L10.86 21.73C11.1623 21.9099 11.5082 22.0033 11.86 22H12.14C12.4913 21.9994 12.8362 21.9063 13.14 21.73L19.85 17.85C20.156 17.6787 20.4087 17.426 20.58 17.12L20.73 16.87C20.9041 16.5653 20.9971 16.221 21 15.87V8.12C20.9994 7.76874 20.9063 7.42384 20.73 7.12ZM11.85 4H12.14L18 7.38L12 10.84L6 7.38L11.85 4ZM13 19.5L18.85 16.12L19 15.87V9.11L13 12.58V19.5Z" fill="currentColor"></path></svg></div></div>
+                    <div class="navbar11_text-wrapper">
+                      <div class="text-weight-semibold">DevOps как сервис</div>
+                      <p class="text-size-small text-size-small-2 hide-mobile-landscape">Автоматизация и развёртывание приложений</p>
+                    </div>
+                  </a>
+                  <a href="#" class="navbar11_dropdown-link w-inline-block">
+                    <div class="navbar11_icon-wrapper"><div class="icon-embed-xsmall w-embed"><svg width="currentWidth" height="currentHeight" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.73 7.12L20.59 6.87C20.4094 6.56769 20.1547 6.31643 19.85 6.14L13.14 2.27C12.8362 2.09375 12.4913 2.00062 12.14 2H11.85C11.4987 2.00062 11.1538 2.09375 10.85 2.27L4.14 6.15C3.83697 6.32526 3.58526 6.57697 3.41 6.88L3.27 7.13C3.09375 7.43384 3.00062 7.77874 3 8.13V15.88C3.00062 16.2313 3.09375 16.5762 3.27 16.88L3.41 17.13C3.58979 17.4295 3.84049 17.6802 4.14 17.86L10.86 21.73C11.1623 21.9099 11.5082 22.0033 11.86 22H12.14C12.4913 21.9994 12.8362 21.9063 13.14 21.73L19.85 17.85C20.156 17.6787 20.4087 17.426 20.58 17.12L20.73 16.87C20.9041 16.5653 20.9971 16.221 21 15.87V8.12C20.9994 7.76874 20.9063 7.42384 20.73 7.12ZM11.85 4H12.14L18 7.38L12 10.84L6 7.38L11.85 4ZM13 19.5L18.85 16.12L19 15.87V9.11L13 12.58V19.5Z" fill="currentColor"></path></svg></div></div>
+                    <div class="navbar11_text-wrapper">
+                      <div class="text-weight-semibold">Сопровождение 1С</div>
+                      <p class="text-size-small text-size-small-2 hide-mobile-landscape">Поддержка и оптимизация платформы 1С</p>
+                    </div>
+                  </a>
+                  <a href="#" class="navbar11_dropdown-link w-inline-block">
+                    <div class="navbar11_icon-wrapper"><div class="icon-embed-xsmall w-embed"><svg width="currentWidth" height="currentHeight" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.73 7.12L20.59 6.87C20.4094 6.56769 20.1547 6.31643 19.85 6.14L13.14 2.27C12.8362 2.09375 12.4913 2.00062 12.14 2H11.85C11.4987 2.00062 11.1538 2.09375 10.85 2.27L4.14 6.15C3.83697 6.32526 3.58526 6.57697 3.41 6.88L3.27 7.13C3.09375 7.43384 3.00062 7.77874 3 8.13V15.88C3.00062 16.2313 3.09375 16.5762 3.27 16.88L3.41 17.13C3.58979 17.4295 3.84049 17.6802 4.14 17.86L10.86 21.73C11.1623 21.9099 11.5082 22.0033 11.86 22H12.14C12.4913 21.9994 12.8362 21.9063 13.14 21.73L19.85 17.85C20.156 17.6787 20.4087 17.426 20.58 17.12L20.73 16.87C20.9041 16.5653 20.9971 16.221 21 15.87V8.12C20.9994 7.76874 20.9063 7.42384 20.73 7.12ZM11.85 4H12.14L18 7.38L12 10.84L6 7.38L11.85 4ZM13 19.5L18.85 16.12L19 15.87V9.11L13 12.58V19.5Z" fill="currentColor"></path></svg></div></div>
+                    <div class="navbar11_text-wrapper">
+                      <div class="text-weight-semibold">Аварийное восстановление</div>
+                      <p class="text-size-small text-size-small-2 hide-mobile-landscape">Защита данных и восстановление после сбоев</p>
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <a href="#" class="navbar11_link w-nav-link">Выполненные проекты</a>
+            <a href="#" class="navbar11_link w-nav-link">О нас</a>
+            <a href="#" class="navbar11_link w-nav-link">Контакты</a>
+          </div>
+          <div class="navbar11_menu-buttons">
+            <a href="#" class="button is-secondary is-small is-alternate w-button">Техническая поддержка</a>
+            <a href="#" class="button is-small w-button">Обсудить проект</a>
+          </div>
+        </nav>
+        <div class="navbar11_menu-button w-nav-button">
+          <div class="menu-icon1">
+            <div class="menu-icon1_line-top"></div>
+            <div class="menu-icon1_line-middle"><div class="menu-icon1_line-middle-inner"></div></div>
+            <div class="menu-icon1_line-bottom"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main-wrapper">
+      <header class="section_header33 text-color-white home-v53_hero-navbar-blue">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="header33_content">
+              <div class="padding-section-large">
+                <div class="text-align-center">
+                  <div class="max-width-large align-center">
+                    <div class="margin-bottom margin-small">
+                      <h1 class="heading-style-h1">IT-партнер для бизнеса</h1>
+                    </div>
+                    <p class="text-size-medium">Наша цель: сделать IT в вашей компании устойчивым, управляемым и предсказуемым</p>
+                    <div class="margin-top margin-medium">
+                      <div class="button-group is-center">
+                        <a href="#" class="button is-alternate w-button">Обсудить проект</a>
+                        <a href="#" class="button is-secondary is-alternate w-button">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header33_background-video-wrapper">
+          <div class="video-overlay-layer"></div>
+          <div data-video-urls="" data-autoplay="true" data-loop="true" data-wf-ignore="true" data-beta-bgvideo-upgrade="false" class="header33_background-video w-background-video w-background-video-atom"><video id="4a76e9d0-5c38-ede9-2dba-eccb2346c388-video" autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover"></video></div>
+        </div>
+      </header>
+      <section class="section_header49 color-scheme-1">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="header49_component">
+                <div class="w-layout-grid header49_content">
+                  <div class="header49_content-left">
+                    <h2 class="heading-style-h2">Единый IT-контур для бизнеса</h2>
+                  </div>
+                  <div class="header49_content-right">
+                    <p class="text-size-medium">Сопровождаем инфраструктуру, облако, 1С, DevOps и Service Desk в одной зоне ответственности: регламенты, SLA и проектный подход — без разрозненных подрядчиков и хаоса в релизах.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_home_section-2 home-v51_two-column-tasks">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="home_section-2_component">
+                <div class="margin-bottom margin-xxlarge">
+                  <div class="text-align-center">
+                    <div class="max-width-large align-center">
+                      <div class="margin-bottom margin-xsmall">
+                        <div class="text-style-tagline">Услуги и Решения</div>
+                      </div>
+                      <div class="margin-bottom margin-small">
+                        <h2 class="heading-style-h2">Закрываем ключевые задачи</h2>
+                      </div>
+                      <p class="text-size-medium">Проектный подход, регламенты, SLA и понятная зона ответственности.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="home_section-2_scroll">
+                <div class="w-layout-grid home_section-2_grid-list">
+                  <div class="w-layout-grid home_section-2_row">
+                    <div class="home_section-2_card">
+                      <div class="home_section-2_card-content">
+                        <div class="home_section-2_card-content-top home-v22_task-card-body">
+                          <div class="margin-bottom margin-small"><h3 class="heading-style-h3">IT-аутсорсинг</h3></div>
+                          <p>Берем на себя поддержку пользователей, рабочих мест, заявок и IT-сервисов.</p>
+                          <div class="margin-top margin-medium home-v22_task-button"><div class="button-group"><a href="#" class="button is-secondary w-button">Подробнее</a></div></div>
+                          <div class="home-v22_task-links" aria-label="Ссылки IT-аутсорсинга">
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Поддержка IT-инфраструктуры</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Service Desk и SLA</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Управление активами</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Внедрение систем</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Миграции и модернизации</a></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="home_section-2_card">
+                      <div class="home_section-2_card-content">
+                        <div class="home_section-2_card-content-top home-v22_task-card-body">
+                          <div class="margin-bottom margin-small"><h3 class="heading-style-h3">Сопровождение 1С</h3></div>
+                          <p>Развиваем бизнес-логику, дорабатываем конфигурации и оптимизируем производительность 1С.</p>
+                          <div class="margin-top margin-medium home-v22_task-button"><div class="button-group"><a href="#" class="button is-secondary w-button">Подробнее</a></div></div>
+                          <div class="home-v22_task-links" aria-label="Ссылки сопровождения 1С">
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Разработка и доработка</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Автоматизация процессов</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Интеграции</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Обновление конфигураций</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Устранение ошибок</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Оптимизация производительности</a></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="home_section-2_card">
+                      <div class="home_section-2_card-content">
+                        <div class="home_section-2_card-content-top home-v22_task-card-body">
+                          <div class="margin-bottom margin-small"><h3 class="heading-style-h3">Услуги дата-центра</h3></div>
+                          <p>Отказоустойчивые дата-центры TIER III: в Москве, Санкт-Петербурге и ЕС.</p>
+                          <div class="margin-top margin-medium home-v22_task-button"><div class="button-group"><a href="#" class="button is-secondary w-button">Подробнее</a></div></div>
+                          <div class="home-v22_task-links" aria-label="Ссылки услуг дата-центра">
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Аренда серверов</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Размещение в дата-центре</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Частное облако</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Резервное копирование</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Аварийное восстановление</a></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="home_section-2_card">
+                      <div class="home_section-2_card-content">
+                        <div class="home_section-2_card-content-top home-v22_task-card-body">
+                          <div class="margin-bottom margin-small"><h3 class="heading-style-h3">Облачные решения</h3></div>
+                          <p>Знаем типовые задачи бизнеса и предлагаем готовые облачные решения под них: рабочие столы, 1С, почта, мессенджер и файловое хранилище на надежном оборудовании.</p>
+                          <div class="margin-top margin-medium home-v22_task-button"><div class="button-group"><a href="#" class="button is-secondary w-button">Подробнее</a></div></div>
+                          <div class="home-v22_task-links" aria-label="Ссылки облачных решений">
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Удаленный рабочий стол</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">1С в облаке</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Корпоративная почта</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Файловое хранилище</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Корпоративный мессенджер</a></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="home_section-2_card">
+                      <div class="home_section-2_card-content">
+                        <div class="home_section-2_card-content-top home-v22_task-card-body">
+                          <div class="margin-bottom margin-small"><h3 class="heading-style-h3">Поддержка инфраструктуры</h3></div>
+                          <p>Сопровождаем серверы, сети, виртуализацию, резервное копирование и мониторинг. Следим за стабильностью инфраструктуры и быстро реагируем на инциденты.</p>
+                          <div class="margin-top margin-medium home-v22_task-button"><div class="button-group"><a href="#" class="button is-secondary w-button">Подробнее</a></div></div>
+                          <div class="home-v22_task-links" aria-label="Ссылки поддержки инфраструктуры">
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Сопровождение серверов</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Сети и VPN</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Виртуализация</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Резервное копирование</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Мониторинг</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Аварийное восстановление</a></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="home_section-2_card">
+                      <div class="home_section-2_card-content">
+                        <div class="home_section-2_card-content-top home-v22_task-card-body">
+                          <div class="margin-bottom margin-small"><h3 class="heading-style-h3">Аутсорсинг DevOps</h3></div>
+                          <p>Выстраиваем CI/CD, автоматизацию инфраструктуры, Kubernetes и мониторинг. Помогаем выпускать изменения быстрее, безопаснее и без хаоса в релизах.</p>
+                          <div class="margin-top margin-medium home-v22_task-button"><div class="button-group"><a href="#" class="button is-secondary w-button">Подробнее</a></div></div>
+                          <div class="home-v22_task-links" aria-label="Ссылки аутсорсинга DevOps">
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">CI/CD процессы</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Управление релизами</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Kubernetes</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Автоматизация инфраструктуры</a></h3>
+                            <h3 class="home-v22_task-link-heading"><a href="#" class="home-v22_task-link">Мониторинг и алертинг</a></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <header class="section_header70 text-color-white home-v31_approaches-client-color">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="header70_component">
+                <div class="text-align-center">
+                  <div class="max-width-large align-center">
+                    <div class="margin-bottom margin-small">
+                      <h1 class="heading-style-h1">Закрываем задачи разными подходами</h1>
+                    </div>
+                    <p class="text-size-medium">Серверы работают без перебоев, сети держат нагрузку, данные защищены. Это основа, на которой растёт бизнес.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header70_background-video-wrapper">
+          <div class="video-overlay-layer"></div>
+          <div data-video-urls="" data-autoplay="true" data-loop="true" data-wf-ignore="true" data-beta-bgvideo-upgrade="false" class="header70_background-video w-background-video w-background-video-atom"><video autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover"></video></div>
+        </div>
+      </header>
+      <header id="blog-header-12" class="section_blog12"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="blog12_component"><div class="margin-bottom margin-xxlarge"><div class="text-align-center"><div class="max-width-large align-center"><div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Проекты</div></div><div class="margin-bottom margin-small"><h1 class="heading-style-h1">Выполненные проекты</h1></div><p class="text-size-medium">Реальные системы для реальных задач</p></div></div></div><div data-current="Все" data-easing="ease" data-duration-in="300" data-duration-out="100" class="blog12_content w-tabs"><div class="category-filter-menu is-center w-tab-menu" role="tablist"><a data-w-tab="Все" class="category-filter-link w-inline-block w-tab-link w--current" id="w-tabs-1-data-w-tab-0" href="#w-tabs-1-data-w-pane-0" role="tab" aria-controls="w-tabs-1-data-w-pane-0" aria-selected="true"><div>Все</div></a><a data-w-tab="IT-аутсорсинг" class="category-filter-link w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-1" href="#w-tabs-1-data-w-pane-1" role="tab" aria-controls="w-tabs-1-data-w-pane-1" aria-selected="false"><div>IT-аутсорсинг</div></a><a data-w-tab="DevOps" class="category-filter-link w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-2" href="#w-tabs-1-data-w-pane-2" role="tab" aria-controls="w-tabs-1-data-w-pane-2" aria-selected="false"><div>DevOps</div></a><a data-w-tab="Облачные решения" class="category-filter-link w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-3" href="#w-tabs-1-data-w-pane-3" role="tab" aria-controls="w-tabs-1-data-w-pane-3" aria-selected="false"><div>Облачные решения</div></a><a data-w-tab="1С" class="category-filter-link w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-4" href="#w-tabs-1-data-w-pane-4" role="tab" aria-controls="w-tabs-1-data-w-pane-4" aria-selected="false"><div>1С</div></a></div><div class="blog12_list-wrapper w-tab-content"><div data-w-tab="Все" class="w-tab-pane w--tab-active" id="w-tabs-1-data-w-pane-0" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-0"><div class="w-layout-grid blog12_list"><div class="home_section-4_item"><a href="#" class="home_section-4_item-link w-inline-block"><div class="margin-bottom margin-small"><div class="home_section-4_image-wrapper"><img loading="lazy" src="images/3.svg" alt="CI/CD для e-commerce без простоя" class="home_section-4_image2"></div></div><div class="margin-bottom margin-xxsmall"><h3 class="heading-style-h5">CI/CD для e-commerce без простоя</h3></div><div class="text-size-regular">Внедрили CI/CD и Blue-Green Deployment для e-commerce компании: релизы проходят без остановки продаж, с безопасным переключением трафика на новую версию.</div><div class="margin-top margin-xsmall"><div class="home_section-4_tag-list"><div class="tag"><div>DevOps</div></div><div class="tag"><div>IT-инфраструктура</div></div><div class="tag"><div>Автоматизация</div></div></div></div><div class="margin-top margin-small"><div class="button-group"><div class="button is-link is-icon"><div>Подробнее</div><div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></div></div></div></a></div><div class="home_section-4_item"><a href="#" class="home_section-4_item-link w-inline-block"><div class="margin-bottom margin-small"><div class="home_section-4_image-wrapper"><img loading="lazy" src="images/2.svg" alt="Infrastructure as Code для банка" class="home_section-4_image2"></div></div><div class="margin-bottom margin-xxsmall"><h3 class="heading-style-h5">Infrastructure as Code для банка</h3></div><div class="text-size-regular">Описали инфраструктуру как код и организовали автоматическое развертывание систем в development, test и production окружениях для банковской команды.</div><div class="margin-top margin-xsmall"><div class="home_section-4_tag-list"><div class="tag"><div>DevOps</div></div><div class="tag"><div>IT-инфраструктура</div></div><div class="tag"><div>Автоматизация</div></div></div></div><div class="margin-top margin-small"><div class="button-group"><div class="button is-link is-icon"><div>Подробнее</div><div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></div></div></div></a></div></div></div><div data-w-tab="IT-аутсорсинг" class="w-tab-pane" id="w-tabs-1-data-w-pane-1" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-1"><div class="w-layout-grid blog12_list"><div class="home_section-4_item"><a href="#" class="home_section-4_item-link w-inline-block"><div class="margin-bottom margin-small"><div class="home_section-4_image-wrapper"><img alt="" src="images/Placeholder-Image.png" loading="lazy" class="home_section-4_image2"></div></div><div class="margin-bottom margin-xxsmall"><h3 class="heading-style-h5">Восстановление после сбоя</h3></div><div class="text-size-regular">Быстрое восстановление данных и сервисов при критических ситуациях</div><div class="margin-top margin-xsmall"><div class="home_section-4_tag-list"><div class="tag"><div>Восстановление</div></div><div class="tag"><div>Отказоустойчивость</div></div></div></div><div class="margin-top margin-small"><div class="button-group"><div class="button is-link is-icon"><div>Подробнее</div><div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></div></div></div></a></div></div></div><div data-w-tab="DevOps" class="w-tab-pane" id="w-tabs-1-data-w-pane-2" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-2"><div class="w-layout-grid blog12_list"><div class="home_section-4_item"><a href="#" class="home_section-4_item-link w-inline-block"><div class="margin-bottom margin-small"><div class="home_section-4_image-wrapper"><img loading="lazy" src="images/3.svg" alt="CI/CD для e-commerce без простоя" class="home_section-4_image2"></div></div><div class="margin-bottom margin-xxsmall"><h3 class="heading-style-h5">CI/CD для e-commerce без простоя</h3></div><div class="text-size-regular">Внедрили CI/CD и Blue-Green Deployment для e-commerce компании: релизы проходят без остановки продаж.</div><div class="margin-top margin-xsmall"><div class="home_section-4_tag-list"><div class="tag"><div>DevOps</div></div><div class="tag"><div>Автоматизация</div></div></div></div><div class="margin-top margin-small"><div class="button-group"><div class="button is-link is-icon"><div>Подробнее</div><div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></div></div></div></a></div></div></div><div data-w-tab="Облачные решения" class="w-tab-pane" id="w-tabs-1-data-w-pane-3" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-3"><div class="w-layout-grid blog12_list"><div class="home_section-4_item"><a href="#" class="home_section-4_item-link w-inline-block"><div class="margin-bottom margin-small"><div class="home_section-4_image-wrapper"><img alt="" src="images/Placeholder-Image.png" loading="lazy" class="home_section-4_image2"></div></div><div class="margin-bottom margin-xxsmall"><h3 class="heading-style-h5">Облачная инфраструктура</h3></div><div class="text-size-regular">Переезд на частное облако TIER III с сохранением данных и минимальным простоем.</div><div class="margin-top margin-xsmall"><div class="home_section-4_tag-list"><div class="tag"><div>Облако</div></div><div class="tag"><div>Инфраструктура</div></div></div></div><div class="margin-top margin-small"><div class="button-group"><div class="button is-link is-icon"><div>Подробнее</div><div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></div></div></div></a></div></div></div><div data-w-tab="1С" class="w-tab-pane" id="w-tabs-1-data-w-pane-4" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-4"><div class="w-layout-grid blog12_list"><div class="home_section-4_item"><a href="#" class="home_section-4_item-link w-inline-block"><div class="margin-bottom margin-small"><div class="home_section-4_image-wrapper"><img alt="" src="images/Placeholder-Image.png" loading="lazy" class="home_section-4_image2"></div></div><div class="margin-bottom margin-xxsmall"><h3 class="heading-style-h5">Оптимизация 1С для производства</h3></div><div class="text-size-regular">Ускорили работу 1С в 4 раза за счёт оптимизации запросов и перехода на современную СУБД.</div><div class="margin-top margin-xsmall"><div class="home_section-4_tag-list"><div class="tag"><div>1С</div></div><div class="tag"><div>Оптимизация</div></div></div></div><div class="margin-top margin-small"><div class="button-group"><div class="button is-link is-icon"><div>Подробнее</div><div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></div></div></div></a></div></div></div></div></div><div class="margin-top margin-xxlarge"><div class="button-group is-center"><a href="#" class="button is-secondary w-button">Все проекты</a></div></div></div></div></div></div></header>
+      <section class="section_home_header home-v33_experts">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="home_header_component">
+                <div class="margin-bottom margin-xxlarge">
+                  <div class="w-layout-grid home_header_content">
+                    <div class="home_header_content-left">
+                      <h2 class="heading-style-h3">Команда экспертов</h2>
+                    </div>
+                    <div class="home_header_content-right">
+                      <p class="text-size-medium">Надёжность измеряется не обещаниями, а временем между сбоями. Вот что даёт инфраструктура, построенная на фундаменте, а не на воздухе.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-layout-grid home_header_list">
+                  <div class="home_header_item">
+                    <div class="margin-bottom margin-large"><div class="home_header_number">500+</div></div>
+                    <div class="home_header_item-content">
+                      <h3 class="heading-style-h6">Серверов на сопровождении 24/7</h3>
+                      <div class="margin-top margin-xxsmall"><p>Инженеры с опытом более десяти лет</p></div>
+                    </div>
+                  </div>
+                  <div class="home_header_item">
+                    <div class="margin-bottom margin-large"><div class="home_header_number">50+</div></div>
+                    <div class="home_header_item-content">
+                      <h3 class="heading-style-h6">Выполненных проектов разработки в 1С</h3>
+                      <div class="margin-top margin-xxsmall"><p>Сертификаты от Kubernetes, AWS, Azure</p></div>
+                    </div>
+                  </div>
+                  <div class="home_header_item">
+                    <div class="margin-bottom margin-large"><div class="home_header_number">5</div></div>
+                    <div class="home_header_item-content">
+                      <h3 class="heading-style-h6">Дата-центров с собственной инфраструктурой</h3>
+                      <div class="margin-top margin-xxsmall"><p>Дежурство в центре мониторинга круглосуточно</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_layout608">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="layout608_component">
+                <div class="margin-bottom margin-xxlarge">
+                  <div class="text-align-center">
+                    <div class="max-width-large align-center">
+                      <div class="margin-bottom margin-small"><h2 class="heading-style-h2">Как мы работаем</h2></div>
+                      <p class="text-size-medium">Идем от аудита текущей системы к проектированию, внедрению и постоянному развитию инфраструктуры, сервисов и бизнес-приложений.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="max-width-large align-center">
+                  <div class="layout608_list">
+                    <div class="layout608_item">
+                      <div class="layout608_item-number-wrapper"><h3 class="heading-style-h2">01</h3></div>
+                      <div class="layout608_item-content">
+                        <div class="margin-bottom margin-xsmall"><h3 class="heading-style-h4">Аудит</h3></div>
+                        <p>Анализируем текущую систему, связанные сервисы, регулярные изменения и долгосрочные цели бизнеса. Находим риски, ограничения и точки роста.</p>
+                      </div>
+                    </div>
+                    <div class="layout608_item">
+                      <div class="layout608_item-number-wrapper"><h3 class="heading-style-h2">02</h3></div>
+                      <div class="layout608_item-content">
+                        <div class="margin-bottom margin-xsmall"><h3 class="heading-style-h4">Проектирование</h3></div>
+                        <p>Проектируем оптимальную архитектуру: масштабируемую, устойчивую и понятную для эксплуатации. Решение должно соответствовать целям бизнеса, а не просто набору технологий.</p>
+                      </div>
+                    </div>
+                    <div class="layout608_item">
+                      <div class="layout608_item-number-wrapper"><h3 class="heading-style-h2">03</h3></div>
+                      <div class="layout608_item-content">
+                        <div class="margin-bottom margin-xsmall"><h3 class="heading-style-h4">Внедрение</h3></div>
+                        <p>Внедряем изменения, настраиваем системы, переносим решения в рабочие процессы и обучаем пользователей. Делаем так, чтобы новая схема действительно заработала в компании.</p>
+                      </div>
+                    </div>
+                    <div class="layout608_item">
+                      <div class="layout608_item-number-wrapper"><h3 class="heading-style-h2">04</h3></div>
+                      <div class="layout608_item-content">
+                        <div class="margin-bottom margin-xsmall"><h3 class="heading-style-h4">Поддержка и оптимизация</h3></div>
+                        <p>Постоянно улучшаем производительность, безопасность и масштабирование. Следим за инфраструктурой, устраняем узкие места и развиваем решение вместе с бизнесом.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_home_devops home-v32_reviews-client-color">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="home_devops_component">
+                <div class="margin-bottom margin-xxlarge">
+                  <div class="text-align-center">
+                    <div class="max-width-large align-center">
+                      <div class="margin-bottom margin-small"><h2 class="heading-style-h2">Слова клиентов</h2></div>
+                      <p class="text-size-medium">Отзывы клиентов о поддержке инфраструктуры, DevOps, IT-аутсорсинге и сопровождении 1С.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="home_devops_grid-list">
+                  <div class="home_devops_content">
+                    <div class="margin-bottom margin-medium"><div class="home_devops_logo-wrapper"><img loading="lazy" src="images/Relume-Logo.svg" alt="" class="home_devops_logo"></div></div>
+                    <h3 class="heading-style-h6">&quot;Команда взяла на себя поддержку серверов, сети и резервного копирования. Инциденты стали прозрачными, а проблемы теперь видим до того, как они влияют на пользователей.&quot;</h3>
+                    <div class="margin-top margin-medium">
+                      <div class="home_devops_client">
+                        <div class="margin-bottom margin-xsmall"><div class="home_devops_client-image-wrapper"><img loading="lazy" src="images/Placeholder-Image-p-130x130q80.png" alt="" class="home_devops_client-image"></div></div>
+                        <div class="text-weight-semibold">Технический директор</div>
+                        <div>Строительная компания</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="home_devops_content">
+                    <div class="margin-bottom margin-medium"><div class="home_devops_logo-wrapper"><img loading="lazy" src="images/Relume-Logo.svg" alt="" class="home_devops_logo"></div></div>
+                    <h3 class="heading-style-h6">&quot;Нам выстроили CI/CD, регламенты релизов и мониторинг. Обновления выходят предсказуемо, без ручной суеты и ночных аварийных выкладок.&quot;</h3>
+                    <div class="margin-top margin-medium">
+                      <div class="home_devops_client">
+                        <div class="margin-bottom margin-xsmall"><div class="home_devops_client-image-wrapper"><img loading="lazy" src="images/Placeholder-Image-p-130x130q80.png" alt="" class="home_devops_client-image"></div></div>
+                        <div class="text-weight-semibold">Технический директор</div>
+                        <div>Торговая компания</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="home_devops_content">
+                    <div class="margin-bottom margin-medium"><div class="home_devops_logo-wrapper"><img loading="lazy" src="images/Relume-Logo.svg" alt="" class="home_devops_logo"></div></div>
+                    <h3 class="heading-style-h6">&quot;Мы закрыли через одного подрядчика Service Desk, рабочие места, серверы и регулярные IT-задачи. Для бизнеса это стало полноценным внешним IT-отделом.&quot;</h3>
+                    <div class="margin-top margin-medium">
+                      <div class="home_devops_client">
+                        <div class="margin-bottom margin-xsmall"><div class="home_devops_client-image-wrapper"><img loading="lazy" src="images/Placeholder-Image-p-130x130q80.png" alt="" class="home_devops_client-image"></div></div>
+                        <div class="text-weight-semibold">Владелец бизнеса</div>
+                        <div>Торговая компания</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_it_hero-header home-v50_advantages-gray">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="it_hero-header_component">
+                <div class="text-align-center">
+                  <div class="max-width-large align-center">
+                    <div class="text-style-tagline">О компании</div>
+                    <div class="spacer-xsmall"></div>
+                    <h2 class="heading-style-h2">Почему нас выбирают</h2>
+                    <div class="spacer-small"></div>
+                    <p class="text-size-medium">Берём вашу систему такой, какая она есть, и превращаем её в предсказуемую машину. Каждый шаг — анализ, планирование, внедрение без остановок.</p>
+                  </div>
+                </div>
+                <div class="spacer-xxlarge"></div>
+                <div class="w-layout-grid it_hero-header_list">
+                  <div class="it_hero-header_item">
+                    <h3 class="heading-style-h4">Правило 15 минут</h3>
+                    <div class="spacer-small"></div>
+                    <p>Если случается беда, у наших администраторов есть 15 минут, чтобы приступить к её решению. Чаще всего этого же времени хватает, чтобы работа проекта была восстановлена.</p>
+                  </div>
+                  <div class="it_hero-header_item">
+                    <h3 class="heading-style-h4">SLA с гарантией</h3>
+                    <div class="spacer-small"></div>
+                    <p>Скорость реакции и максимально допустимое время простоя фиксируем на уровне договора. Несем за них ответственность.</p>
+                  </div>
+                  <div class="it_hero-header_item">
+                    <h3 class="heading-style-h4">Проектный подход</h3>
+                    <div class="spacer-small"></div>
+                    <p>Вместе планируем roadmap. Берем на себя подготовку инфраструктуры. Держим связь с разработчиками и поддержкой дата-центра.</p>
+                  </div>
+                </div>
+                <div class="spacer-xxlarge"></div>
+                <div class="button-group is-center">
+                  <a href="#" class="button is-secondary w-button">Начать</a>
+                  <a href="#" class="button is-link is-icon w-inline-block">
+                    <div>Подробнее</div>
+                    <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_home_testimonial">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="home_testimonial_component">
+                <div class="margin-bottom margin-xxlarge">
+                  <div class="text-align-center">
+                    <div class="max-width-large align-center">
+                      <div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Связаться с нами</div></div>
+                      <div class="margin-bottom margin-small"><h2 class="heading-style-h2">Обсудить проект</h2></div>
+                      <p class="text-size-medium">Расскажите о вашей задаче — подскажем, как лучше организовать поддержку, инфраструктуру, DevOps или сопровождение 1С.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="max-width-medium align-center">
+                  <div class="home_testimonial_form-block w-form">
+                    <form id="wf-form-Contact-1-Form" name="wf-form-Contact-1-Form" data-name="Contact 1 Form" method="get" class="home_testimonial_form" data-wf-page-id="69ff91fdb43935c00daecd87" data-wf-element-id="4a76e9d0-5c38-ede9-2dba-eccb2346c549">
+                      <div class="form_field-wrapper"><label for="Contact-1-Name" class="form_field-label">Имя</label><input class="form_input w-input" maxlength="256" name="Contact-1-Name" data-name="Contact 1 Name" placeholder="" type="text" id="Contact-1-Name" required=""></div>
+                      <div class="form_field-wrapper"><label for="Contact-1-Email" class="form_field-label">Email</label><input class="form_input w-input" maxlength="256" name="Contact-1-Email" data-name="Contact 1 Email" placeholder="" type="email" id="Contact-1-Email" required=""></div>
+                      <div class="form_field-wrapper"><label for="Contact-1-Message" class="form_field-label">Сообщение</label><textarea id="Contact-1-Message" name="Contact-1-Message" maxlength="5000" data-name="Contact 1 Message" placeholder="Кратко опишите задачу" required="" class="form_input is-text-area w-input"></textarea></div>
+                      <div class="margin-bottom margin-xsmall"><label id="Contact-1-Checkbox-label" class="w-checkbox form_checkbox"><div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox-icon"></div><input type="checkbox" name="Contact-1-Checkbox" id="Contact-1-Checkbox" data-name="Contact 1 Checkbox" required="" style="opacity:0;position:absolute;z-index:-1"><span for="Contact-1-Checkbox" class="form_checkbox-label text-size-small w-form-label">Я согласен с <a href="#" class="text-style-link">условиями обработки данных</a></span></label></div>
+                      <input type="submit" data-wait="Отправляем..." class="button w-button" value="Отправить">
+                    </form>
+                    <div class="form_message-success-wrapper w-form-done"><div class="form_message-success"><div>Спасибо! Ваша заявка получена.</div></div></div>
+                    <div class="form_message-error-wrapper w-form-fail"><div class="form_message-error"><div>Что-то пошло не так. Попробуйте отправить форму еще раз.</div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer3_component home-v29_footer-dark" style="background-color:#000;color:#fff;">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-vertical padding-xxlarge">
+            <div class="padding-bottom padding-xxlarge">
+              <div class="w-layout-grid footer3_top-wrapper">
+                <div class="footer3_left-wrapper">
+                  <div class="margin-bottom margin-medium"><a href="#" class="footer3_logo-link w-nav-brand"><img loading="lazy" src="images/relume-914021.png" alt="" class="footer3_logo"></a></div>
+                  <div class="margin-bottom margin-medium">
+                    <div class="footer3_details-wrapper">
+                      <div class="margin-bottom margin-tiny"><div class="text-size-small text-size-small-2 text-weight-semibold">Адрес</div></div>
+                      <div class="margin-bottom margin-small"><div class="text-size-small">Москва, Россия, центр обработки данных</div></div>
+                      <div class="margin-bottom margin-tiny"><div class="text-size-small text-size-small-2 text-weight-semibold">Связь</div></div>
+                      <a href="#" class="text-size-small">+7 495 123 4567</a>
+                      <a href="#" class="text-size-small">hello@metacloud.ru</a>
+                    </div>
+                  </div>
+                  <div class="w-layout-grid footer3_social-list">
+                    <a href="#" class="footer3_social-link w-inline-block"><div class="icon-embed-xsmall w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.0611C22 6.50451 17.5229 2 12 2C6.47715 2 2 6.50451 2 12.0611C2 17.0828 5.65684 21.2452 10.4375 22V14.9694H7.89844V12.0611H10.4375V9.84452C10.4375 7.32296 11.9305 5.93012 14.2146 5.93012C15.3088 5.93012 16.4531 6.12663 16.4531 6.12663V8.60261H15.1922C13.95 8.60261 13.5625 9.37822 13.5625 10.1739V12.0611H16.3359L15.8926 14.9694H13.5625V22C18.3432 21.2452 22 17.083 22 12.0611Z" fill="CurrentColor"></path></svg></div></a>
+                    <a href="#" class="footer3_social-link w-inline-block"><div class="icon-embed-xsmall w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.1761 4H19.9362L13.9061 10.7774L21 20H15.4456L11.0951 14.4066L6.11723 20H3.35544L9.80517 12.7508L3 4H8.69545L12.6279 9.11262L17.1761 4ZM16.2073 18.3754H17.7368L7.86441 5.53928H6.2232L16.2073 18.3754Z" fill="CurrentColor"></path></svg></div></a>
+                    <a href="#" class="footer3_social-link w-inline-block"><div class="icon-embed-xsmall w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.5686 4.77345C21.5163 5.02692 22.2555 5.76903 22.5118 6.71673C23.1821 9.42042 23.1385 14.5321 22.5259 17.278C22.2724 18.2257 21.5303 18.965 20.5826 19.2213C17.9071 19.8831 5.92356 19.8015 3.40294 19.2213C2.45524 18.9678 1.71595 18.2257 1.45966 17.278C0.827391 14.7011 0.871044 9.25144 1.44558 6.73081C1.69905 5.78311 2.44116 5.04382 3.38886 4.78753C6.96561 4.0412 19.2956 4.282 20.5686 4.77345ZM9.86682 8.70227L15.6122 11.9974L9.86682 15.2925V8.70227Z" fill="CurrentColor"></path></svg></div></a>
+                  </div>
+                </div>
+                <div class="w-layout-grid footer3_menu-wrapper">
+                  <div class="footer3_link-list">
+                    <a href="#" class="footer3_link">IT-аутсорсинг</a>
+                    <a href="#" class="footer3_link">Сопровождение 1С</a>
+                    <a href="#" class="footer3_link">DevOps</a>
+                    <a href="#" class="footer3_link">Облачные решения</a>
+                    <a href="#" class="footer3_link">ИИ для бизнеса</a>
+                    <a href="#" class="footer3_link">Аварийное восстановление</a>
+                  </div>
+                  <div class="footer3_link-list">
+                    <a href="#" class="footer3_link">О нас</a>
+                    <a href="#" class="footer3_link">Выполненные проекты</a>
+                    <a href="#" class="footer3_link">Блог</a>
+                    <a href="#" class="footer3_link">Контакты</a>
+                    <a href="#" class="footer3_link">Карьера</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider-horizontal"></div>
+            <div class="padding-top padding-medium">
+              <div class="footer3_bottom-wrapper">
+                <div class="footer3_credit-text">© 2026 Инфраструктура для бизнеса и DevOps Solutions. Все права защищены.</div>
+                <div class="w-layout-grid footer3_legal-list">
+                  <a href="#" class="footer3_legal-link">Политика конфиденциальности</a>
+                  <a href="#" class="footer3_legal-link">Условия использования</a>
+                  <a href="#" class="footer3_legal-link">Настройки cookies</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=69fa2db34a07dabdc28b9a9c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+</body>
+</html>
