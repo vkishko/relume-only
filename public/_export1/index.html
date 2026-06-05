@@ -76,11 +76,11 @@
 .footer3_component .footer3_legal-link,
 .footer3_component .footer3_credit-text,
 .footer3_component .text-size-small {
-  color: rgba(245, 245, 245, .78);
+  color: rgba(245, 245, 245, .72) !important;
 }
 .footer3_component .footer3_link:hover,
 .footer3_component .footer3_legal-link:hover {
-  color: #fff;
+  color: #fff !important;
 }
 .footer3_component .footer3_social-link {
   color: #f5f5f5;
@@ -89,11 +89,23 @@
   background-color: rgba(245, 245, 245, .18);
 }
 .footer3_component .footer3_menu-wrapper {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(4, minmax(max-content, 1fr));
+  justify-content: stretch;
+  width: 100%;
+}
+.footer3_component .footer3_link-list {
+  min-width: max-content;
+}
+.footer3_component .footer3_link {
+  font-weight: 400;
+  white-space: nowrap;
 }
 .footer3_column-title {
   margin-bottom: .75rem;
-  color: #fff;
+  color: #fff !important;
+  white-space: nowrap;
 }
 @media screen and (max-width: 991px) {
   .footer3_component .footer3_menu-wrapper {
