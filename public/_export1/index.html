@@ -61,6 +61,50 @@
     min-height: 18rem;
   }
 }
+.footer3_component {
+  background: linear-gradient(180deg, #050505 0%, #151515 100%);
+  color: #f5f5f5;
+}
+.footer3_component,
+.footer3_component * {
+  color: #f5f5f5;
+}
+.footer3_component .footer3_logo {
+  filter: brightness(0) invert(1);
+}
+.footer3_component .footer3_link,
+.footer3_component .footer3_legal-link,
+.footer3_component .footer3_credit-text,
+.footer3_component .text-size-small {
+  color: rgba(245, 245, 245, .78);
+}
+.footer3_component .footer3_link:hover,
+.footer3_component .footer3_legal-link:hover {
+  color: #fff;
+}
+.footer3_component .footer3_social-link {
+  color: #f5f5f5;
+}
+.footer3_component .divider-horizontal {
+  background-color: rgba(245, 245, 245, .18);
+}
+.footer3_component .footer3_menu-wrapper {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.footer3_column-title {
+  margin-bottom: .75rem;
+  color: #fff;
+}
+@media screen and (max-width: 991px) {
+  .footer3_component .footer3_menu-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer3_component .footer3_menu-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
@@ -1002,14 +1046,29 @@
                   </div>
                   <div class="w-layout-grid footer3_menu-wrapper">
                     <div class="footer3_link-list">
-                      <a href="#" class="footer3_link">IT-аутсорсинг</a>
+                      <div class="footer3_column-title text-size-small text-weight-semibold">Сопровождение</div>
+                      <a href="#" class="footer3_link">Поддержка инфраструктуры</a>
                       <a href="#" class="footer3_link">Сопровождение 1С</a>
-                      <a href="#" class="footer3_link">DevOps</a>
-                      <a href="#" class="footer3_link">Облачные решения</a>
-                      <a href="#" class="footer3_link">ИИ для бизнеса</a>
-                      <a href="#" class="footer3_link">Аварийное восстановление</a>
+                      <a href="#" class="footer3_link">Информационная безопасность</a>
                     </div>
                     <div class="footer3_link-list">
+                      <div class="footer3_column-title text-size-small text-weight-semibold">Инфраструктура</div>
+                      <a href="#" class="footer3_link">Выделенные серверы</a>
+                      <a href="#" class="footer3_link">Серверы для 1С</a>
+                      <a href="#" class="footer3_link">Частное облако</a>
+                      <a href="#" class="footer3_link">Миграция в дата-центр</a>
+                      <a href="#" class="footer3_link">Colocation</a>
+                    </div>
+                    <div class="footer3_link-list">
+                      <div class="footer3_column-title text-size-small text-weight-semibold">Сервисы</div>
+                      <a href="#" class="footer3_link">1С в облаке</a>
+                      <a href="#" class="footer3_link">Удалённый рабочий стол</a>
+                      <a href="#" class="footer3_link">Терминальный доступ</a>
+                      <a href="#" class="footer3_link">Корпоративная почта</a>
+                      <a href="#" class="footer3_link">Корпоративный портал</a>
+                    </div>
+                    <div class="footer3_link-list">
+                      <div class="footer3_column-title text-size-small text-weight-semibold">Компания</div>
                       <a href="#" class="footer3_link">О нас</a>
                       <a href="#" class="footer3_link">Выполненные проекты</a>
                       <a href="#" class="footer3_link">Блог</a>
